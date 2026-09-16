@@ -679,7 +679,7 @@ def vraag_aan_ollama(prompt, context, modus):
         
         # We gebruiken het officiële, razendsnelle online Llama 3 model van Meta via Groq!
         response = client.chat.completions.create(
-            model="llama-3.1-8b-instant",
+            model="llama-3.3-70b-versatile",
             messages=[
                 {
                     "role": "system",
