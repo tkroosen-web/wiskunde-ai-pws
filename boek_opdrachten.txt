@@ -1,0 +1,474 @@
+Opdracht 1
+In een klas is gevraagd hoe vaak elke leerling per week aan sport doet. In de tabel zie je de resultaten aan sport doet. In de tabel zie je de resultaten onderverdeeld naar leeftijd. Er wordt willekeurig een leerling uit deze klas gekozen.
+X = leeftijd van leerling
+Y = aantal keer sporten per week
+
+Tabel:
+Aantal keer sporten per week: 0 | 1 | 2 | 3 | Totaal
+16 jaar: 3 | 7 | 7 | 3 | 20
+17 jaar: 2 | 1 | 2 | 0 | 5
+Totaal: 5 | 8 | 9 | 3 | 25
+
+a Toon aan dat P(X = 17) = 0,2.
+b Bereken P(Y = 1).
+c Bereken P(X = 16 en Y = 1).
+
+Opdracht 2
+Vul in voor de toevalsvariabele X uit het voorbeeld hierboven.
+a P(X >= 2) = 1 - P(X <= ...)
+b P(X >= 2) = P(X = 2) + P(...) + P(...)
+c P(X < 2) = P(X = 0) + ...
+d P(minstens één witte) = P(X >= ...)
+e P(hoogstens drie witte) = P(X <= 3)
+f P(alleen maar witte) = P(X = ...)
+
+Opdracht 3
+In een vaas zitten acht rode, vijf witte en twee blauwe knikkers.
+Debby pakt vijf knikkers uit de vaas.
+X = aantal witte knikkers dat Debby pakt
+a Bereken P(X = 2).
+
+Lisette pakt met terugleggen vier knikkers uit de vaas.
+Y = aantal rode knikkers dat Lisette pakt
+b Bereken P(Y = 0).
+c Bereken P(Y <= 3).
+
+Opdracht 4
+In een vaas zitten vijf rode, drie witte en twee groene knikkers.
+Elly pakt vier knikkers uit de vaas.
+X = aantal rode knikkers dat Elly pakt
+a Bereken P(X = 2).
+b Bereken P(X >= 1).
+
+Opdracht 5
+Uit onderzoek van het Sociaal en Cultureel Planbureau blijkt dat 86% van de vaders kraamverlof opneemt, direct na de geboorte van hun kind. Voor een onderzoek worden tien kersverse vaders ondervraagd.
+X = aantal vaders dat kraamverlof opneemt
+a Bereken P(X = 8).
+b Bereken P(X < 9).
+
+Opdracht 6
+Uit onderzoek van het Sociaal en Cultureel Planbureau blijkt dat bij werkende ouders van wie het jongste kind jonger dan 4 jaar is, 70% gebruikmaakt van formele opvang. Dat is kinderopvang op een kinderdagverblijf of bij een gastouder. Daarnaast wordt bij 23% uitsluitend opgepast door familie, vrienden of buren, de zogeheten informele opvang.
+Bij een onderzoek zijn tien werkende ouders betrokken van wie het jongste kind jonger dan 4 jaar is.
+X = aantal ouders dat gebruikmaakt van formele opvang
+Y = aantal ouders dat uitsluitend gebruikmaakt van informele opvang
+Bereken.
+a P(X = 6)
+b P(Y = 3)
+c P(Y >= 2)
+d P(X = 8 en Y = 2)
+
+Opdracht 7
+In een doos zitten 20 enveloppen. In acht van deze enveloppen zit een briefje van 10 euro, de overige twaalf enveloppen zijn leeg.
+Arjan pakt twee enveloppen uit de doos.
+X = totale bedrag in de twee enveloppen die Arjan pakt
+Bereken P(X = 20) en P(X > 0).
+
+Opdracht 8
+In de 4 vwo afdeling van het Zuidpoort College zitten 83 leerlingen: 25 leerlingen zijn 16 jaar, 40 zijn 17 jaar en 18 zijn 18 jaar.
+Er wordt aselect een leerling gekozen.
+X = leeftijd van leerling
+a Bereken P(X = 16).
+b Wat weet je van P(X = 16) + P(X = 17) + P(X = 18)?
+
+Opdracht 9
+Zie het voorbeeld.
+a Waarom is P(X = 5) niet opgenomen in de tabel?
+b Hoe kun je P(X = 4) berekenen met behulp van de andere drie kansen?
+
+Opdracht 10
+In een vaas zitten vier witte en zes rode knikkers.
+Thijs pakt zonder terugleggen één voor één knikkers uit de vaas, totdat hij een rode pakt. Hierbij is X het aantal keer dat Thijs een knikker pakt.
+Stel de kansverdeling van X op.
+
+Opdracht 11
+De kans dat Koen bij het basketballen een vrije worp raakschiet is 0,75. Hij mag tijdens een wedstrijd drie vrije worpen nemen. Hierbij is X het aantal vrije worpen dat hij raakschiet.
+Stel de kansverdeling van X op.
+
+Opdracht 12
+Lotte en Gijs spelen een tennispartij over maximaal drie sets. Degene die als eerste twee sets wint, is winnaar. De kans dat Lotte een set wint is 0,6, dus voor Gijs is die kans 0,4. Bij deze situatie hoort de kansboom van figuur 9.4.
+Bereken de kans dat
+a Lotte de partij in twee sets wint
+b Gijs de eerste set wint en Lotte de volgende twee
+c de partij drie sets duurt.
+Y = aantal sets dat de partij duurt
+d Stel de kansverdeling van Y op.
+
+Opdracht 13
+Fred en Barney spelen een dartswedstrijd over maximaal drie sets. Degene die als eerste twee sets wint, is winnaar. De kans dat Barney een set wint is 0,65, dus voor Fred is die kans 0,35.
+Z = aantal sets dat de partij duurt
+Stel de kansverdeling van Z op.
+
+Opdracht 14
+Bij een opleidingsinstituut moet een toelatingsexamen worden afgelegd. De kans dat iemand voor dit examen slaagt is 0,6.
+Iemand die niet slaagt, mag herkansen. De kans om voor de herkansing te slagen is 0,3. In totaal mag je drie keer herkansen. Ben je ook voor de derde herkansing gezakt, dan ben je definitief afgewezen.
+A = aantal keer examen gedaan
+Stel de kansverdeling van A op.
+
+Opdracht 15
+In een doos zitten twee rode, twee witte en twee blauwe ballen.
+Jesse pakt één voor één ballen uit de doos totdat hij twee rode en twee blauwe ballen heeft gepakt.
+X = aantal keer dat Jesse een bal pakt
+Stel de kansverdeling van X op.
+
+Opdracht 16
+Sportvereniging Niké organiseert wekelijks een loterij.
+Elk lot kost 5 euro. Er is een eerste prijs van 2000 euro en er zijn 100 prijzen van 20 euro. Elke week worden 1000 loten verkocht.
+Hoeveel winst maakt Niké wekelijks met deze loterij? Hoeveel is dat gemiddeld per lot?
+
+Opdracht 17
+Zie het voorbeeld. Om de winstverwachting per lot te berekenen, zou je ook eerst de verwachtingswaarde van de uitbetaling U per lot kunnen berekenen.
+a Stel de kansverdeling van U op en bereken E(U).
+b Hoe volgt E(W) hieruit?
+
+Opdracht 18
+Bij een loterij zijn 100 loten van 2 euro verkocht. Er is één prijs van 50 euro en er zijn drie tweede prijzen van 10 euro.
+a Bereken de verwachtingswaarde van de winst per lot voor een deelnemer aan de loterij.
+b We noemen een loterij eerlijk als de winstverwachting per lot gelijk is aan 0.
+Wat moet bij deze loterij een lot kosten om van een eerlijke loterij te kunnen spreken?
+
+Opdracht 19
+Bij een spel met een dobbelsteen waarop vijf keer het cijfer 3 staat en één keer het cijfer 8 gelden de volgende regels.
+- De inleg is 8 euro.
+- Je gooit twee keer met de dobbelsteen.
+- De uitbetaling is de som van de gegooide cijfers in euro's.
+Bereken in centen nauwkeurig de verwachtingswaarde van de winst per spel.
+
+Opdracht 20
+Chuck-a-Luck is een spel met dobbelstenen dat in de VS veel gespeeld wordt. Je zet voor één dollar in op een zeker aantal ogen, bijvoorbeeld op 5 ogen. Daarna gooi je met drie dobbelstenen. Het aantal keren dat je 5 ogen gooit, krijg je in dollars uitbetaald.
+a Bereken exact de kans dat je bij een worp met drie dobbelstenen één keer 5 ogen gooit.
+b Bereken exact de kans dat je 2 dollar krijgt uitbetaald.
+c Bereken exact de kans dat je je inzet kwijt bent.
+d Hoeveel brengt het spel naar verwachting de organisatie op als 500 personen meedoen?
+
+Opdracht 21
+In een vaas zitten vier rode en zes witte knikkers. Monique pakt één voor één knikkers uit de vaas, totdat ze een witte pakt.
+Bereken de verwachtingswaarde van het aantal knikkers dat Monique pakt.
+
+Opdracht 22
+Jessica gooit acht keer met een dobbelsteen.
+Bereken de kans op
+a drie keer 6 ogen
+b vijf keer meer dan 2 ogen.
+
+Opdracht 23
+Stel dat je dezelfde kans wilt berekenen als in het voorbeeld, maar dan met behulp van de variabele Y = aantal keer hoogstens vier ogen.
+a Wat zijn de waarden van n, p en k dan?
+b Voer de berekening uit en vergelijk de antwoorden.
+
+Opdracht 24
+In een vaas zitten acht rode, twee witte en tien groene knikkers.
+a Carmen pakt met terugleggen zes keer een knikker uit de vaas.
+X = aantal rode knikkers dat Carmen pakt
+Geef n en p en bereken P(X = 4).
+b Coen pakt met terugleggen twaalf keer een knikker uit de vaas.
+Y = aantal niet-witte knikkers dat Coen pakt
+Geef n en p en bereken P(Y = 10).
+c Mariël pakt zonder terugleggen vier knikkers uit de vaas.
+Z = aantal groene knikkers dat Mariël pakt
+Is Z binomiaal verdeeld? Bereken P(Z = 3).
+
+Opdracht 25
+Een honkbalspeler heeft een slaggemiddelde van 0,3.
+a Bereken de kans dat zij in tien achtereenvolgende slagbeurten vijf keer slag heeft.
+b Bereken de kans dat zij in vijf achtereenvolgende slagbeurten alleen bij de laatste beurt slag heeft.
+
+Opdracht 26
+De toevalsvariabele X is binomiaal verdeeld met n = 3 en p = 0,2.
+Bij X hoort de kansverdeling hiernaast.
+Tabel:
+x | 0 | 1 | 2 | 3
+P(X = x) | 0,512 | 0,384 | 0,096 | 0,008
+
+a Bereken P(X <= 2).
+b Waarom kun je direct zeggen P(X <= 3) = 1?
+c Waarom is P(X < 0) = P(X = 0)?
+d Vul de tabel hiernaast in voor P(X <= x).
+
+Opdracht 27
+Zie het voorbeeld.
+a Bereken de kans van vraag a zoals in het voorbeeld op bladzijde 75.
+b Leg uit waarom de kans bij c geen binomiale kans is.
+
+Opdracht 28
+De schijf in figuur 9.6 is verdeeld in zes even grote sectoren.
+Bereken de kans dat de pijl bij
+a 10 keer draaien drie keer wit aanwijst
+b 12 keer draaien hoogstens vijf keer rood aanwijst
+c 9 keer draaien minstens één keer blauw aanwijst
+d 8 keer draaien vijf keer blauw en drie keer rood aanwijst
+e 16 keer draaien acht keer blauw, vijf keer rood en drie keer wit aanwijst.
+
+Opdracht 29
+Van een tennisspeelster is bekend dat van haar eerste opslagen 55% in is.
+Bereken de kans dat
+a bij tien servicebeurten vijf keer de eerste opslag in is
+b bij zes servicebeurten alleen de laatste vier keer de eerste opslag in is.
+
+Opdracht 30
+Op een autosnelweg houdt 84% van de automobilisten zich aan de toegestane maximumsnelheid van 100 km/uur. Van de snelheidsovertreders rijdt een kwart zelfs 120 km/uur of meer.
+Bij een radarcontrole wordt van 60 auto's de snelheid gecontroleerd.
+Bereken de kans dat
+a tien automobilisten te hard rijden
+b hoogstens twee automobilisten 120 km/uur of meer rijden
+c een kwart van de automobilisten een snelheid heeft tussen 100 en 120 km/uur.
+
+Opdracht 31
+Van een zeer grote partij accu's is 20% ondeugdelijk. Een opkoper, die dit percentage niet kent, besluit de partij op te kopen als hij in een steekproef van 54 accu's niet meer dan 3 ondeugdelijke accu's aantreft.
+Bereken de kans dat de opkoper de partij koopt.
+
+Opdracht 32
+X is een binomiale toevalsvariabele. De kans op meer dan acht keer succes noteer je als P(X > 8).
+Noteer met behulp van X de kans op
+a minstens vier keer succes
+b minder dan acht keer succes.
+
+Herleid tot een vorm met één of meer kansen van het type P(X <= k).
+c P(X > 5)
+d P(X >= 10)
+e P(X < 7)
+f P(12 <= X <= 20)
+g P(4 < X < 12)
+h P(2 <= X < 5)
+i P(4 < X <= 8)
+j P(X tussen 8 en 20)
+
+Opdracht 33
+Bij een binomiaal kansexperiment met n = 25 en p = 0,42 is X het aantal keer succes.
+Bereken.
+a P(X < 10)
+b P(X >= 8)
+c P(meer dan 12 keer succes)
+d P(tussen 9 en 16 keer succes)
+e P(minstens 6 keer succes)
+f P(9 of 10 keer succes)
+
+Opdracht 34
+Hiernaast zie je nog eens de schijf van het voorbeeld (figuur 9.8).
+Bereken de kans dat de pijl in
+a 10 beurten minstens vijf keer een appel aanwijst
+b 25 beurten tussen de 10 en 20 keer een appel aanwijst
+c 100 beurten meer dan 60 keer een appel aanwijst
+d 35 beurten zeven keer kersen aanwijst.
+
+Opdracht 35
+In een vaas zitten 12 rode, 8 zwarte en 5 witte knikkers. Mariëlle pakt twee knikkers uit de vaas en kijkt welke kleur deze knikkers hebben. Mariëlle voert dit experiment 15 keer uit. Elke keer legt ze de getrokken knikkers weer in de vaas terug.
+Bereken de kans dat ze
+a drie keer twee rode knikkers pakt
+b minstens tien keer één zwarte knikker pakt
+c minder dan zes keer twee knikkers van dezelfde kleur pakt
+d minstens acht keer minstens één rode knikker pakt.
+
+Opdracht 36
+Van de bijna drie miljoen kinderen tot 15 jaar die ons land telt, leeft 11% in een eenoudergezin.
+Bereken de kans dat
+a in een voetbalelftal van de O13 geen enkele speler uit een eenoudergezin komt
+b in groep 8 van basisschool 'De Cirkel' van de 22 leerlingen er hoogstens twee uit een eenoudergezin komen.
+
+Op muziekschool 'De Blokfluit' zitten 35 kinderen onder de 15 jaar van wie er vijf uit een eenoudergezin komen. Voor een concert worden willekeurig zes kinderen onder de 15 jaar aangewezen.
+c Bereken de kans dat hierbij twee kinderen uit een eenoudergezin zitten.
+
+Opdracht 37
+Bij een vliegmaatschappij weet men uit ervaring dat de kans dat een passagier bij een vlucht naar Madrid niet komt opdagen 12% is. Voor de vlucht van 10:00 uur op 15 februari naar Madrid zijn 92 stoelen beschikbaar. Er zijn 100 boekingen.
+Bereken de kans dat iedereen die komt opdagen een plaats heeft.
+
+Opdracht 38
+Bij een verhuurbedrijf van strandstoelen weet men uit ervaring dat 8% van de badgasten die voor een dag een stoel hebben besproken niet komt opdagen. Het bedrijf heeft elke dag in totaal 190 strandstoelen beschikbaar.
+Hoeveel stoelen zullen dagelijks verhuurd worden als de kans dat iedereen die komt opdagen een stoel heeft minstens 95% moet zijn?
+
+Opdracht 39
+Jan gooit 30 keer met een dobbelsteen. Hij verwacht vijf keer 6 ogen te gooien.
+a Licht toe waarom hij dit verwacht.
+X = aantal keer dat Jan 6 ogen gooit
+b Vul de tabel hiernaast in. Rond af op drie decimalen.
+Tabel:
+x | 3 | 4 | 5 | 6 | 7
+P(X = x) | ... | ... | ... | ... | ...
+
+Opdracht 40
+a Van een binomiale toevalsvariabele X is n = 140 en p = 0,4. Bereken de kans dat het aantal successen minder dan één standaardafwijking van de verwachtingswaarde afligt.
+b Joep gooit 1000 keer met een dobbelsteen. Bereken de kans dat het aantal keer dat hij 6 ogen gooit meer dan twee keer de standaardafwijking van de verwachtingswaarde afligt.
+
+Opdracht 41
+Bewering: Bij een binomiale verdeling ligt bij grote waarden van n ongeveer 68,3% van de successen minder dan één standaardafwijking van de verwachtingswaarde af. Onderzoek of deze bewering waar is voor enkele waarden van n en p.
+
+Opdracht 42
+Autoverkoper Nico houdt al jaren bij hoeveel van de door hem opgestelde offertes daadwerkelijk tot verkoop leiden. Hij maakt daarbij onderscheid tussen offertes voor nieuwe auto's en offertes voor occasions. Voor beide soorten geldt dat het aantal offertes dat tot verkoop leidt binomiaal verdeeld is. De kans dat een offerte voor een occasion tot verkoop leidt is 0,28.
+a In het eerste kwartaal van 2020 leidden 21 offertes voor een occasion tot verkoop. Dat is precies zoveel als het verwachte aantal. Hoeveel offertes voor occasions heeft Nico in het eerste kwartaal van 2020 opgesteld?
+b Nico spreekt van een slecht resultaat als het aantal offertes dat tot verkoop leidt meer dan twee standaardafwijkingen kleiner is dan verwacht. In het tweede kwartaal van 2020 stelde Nico 100 offertes voor occasions op en behaalde hij een slecht resultaat. Hoeveel offertes voor occasions leidden in het tweede kwartaal van 2020 tot verkoop?
+c In 2020 heeft Nico in totaal 217 offertes voor nieuwe auto's opgesteld. Van deze offertes leidden er 90 tot verkoop. Dat is twee standaardafwijkingen meer dan het aantal dat Nico had verwacht. Bereken de kans dat een offerte voor een nieuwe auto tot verkoop leidt.
+
+Opdracht 43
+In figuur 9.9 zie je de normaalkromme met gemiddelde mu = 15 en standaardafwijking sigma = 3.
+a Licht toe dat de oppervlakte van het rode gebied ongeveer 16% oftewel 0,16 is.
+
+De normaalkrommen in figuur 9.10 horen bij mu = 15 en sigma = 3.
+b Geef van elk gebied de oppervlakte. Gebruik de vuistregels. Noteer de antwoorden met een getal tussen 0 en 1.
+Figuur 9.10:
+- a: gebied links van 12
+- b: gebied tussen 9 en 15
+- c: gebied rechts van 21
+- d: gebied tussen 15 und 18
+
+Opdracht 44
+Bij de normaalkrommen in figuur 9.13 zijn steeds mu en sigma vermeld. Bereken telkens de oppervlakte van het rode gebied.
+Figuur 9.13:
+- a: mu = 3,5 en sigma = 1,1 (gebied links van 5)
+- b: mu = 850 en sigma = 120 (gebied rechts van 700)
+- c: mu = 1080 en sigma = 60 (gebied tussen 1000 en 1100)
+
+Opdracht 45
+Bij een normale verdeling is mu = 520 en sigma = 18.
+a Bereken de oppervlakte van het gebied onder de normaalkromme links van 480. Maak eerst een schets en kleur het gebied.
+b Bereken de oppervlakte van het gebied onder de normaalkromme rechts van 510.
+
+Opdracht 46
+Bij een normale verdeling is mu = 5,8 cm en sigma = 0,4 cm.
+Hoeveel procent van de waarnemingsgetallen
+a is kleiner dan 5,1 cm
+b is groter dan 5,25 cm
+c ligt tussen 6,1 en 6,4 cm?
+
+Opdracht 47
+Volgens een van de vuistregels bij de normale verdeling ligt 68% van de waarnemingsgetallen binnen één standaardafwijking van het gemiddelde. Hierbij is het percentage afgerond op gehelen.
+a Zoek met de GR uit hoeveel dat percentage in twee decimalen is.
+b Bereken bij de andere vuistregel het percentage in twee decimalen.
+
+Opdracht 48
+Zie figuur 9.14.
+Gegeven is dat de oppervlakte van het gebied rechts van a gelijk is aan 0,65.
+Wat weet je van de oppervlakte van het gebied links van a?
+
+Opdracht 49
+Bij de normaalkrommen in figuur 9.18 is bij gegeven mu en sigma de oppervlakte van het rode gebied vermeld.
+Bereken telkens a.
+Figuur 9.18:
+- a: mu = 16, sigma = 2, opp = 0,3 (gebied links van a)
+- b: mu = 50, sigma = 8, opp = 0,7 (gebied rechts van a)
+- c: mu = 600, sigma = 70, opp = 0,86 (gebied links van a)
+- d: mu = 0,8, sigma = 0,2, opp = 0,08 (gebied rechts van a)
+
+Opdracht 50
+Het gebied onder de normaalkromme in figuur 9.19 is in drie stukken met gelijke oppervlakte verdeeld.
+Bereken a en b.
+Figuur 9.19: mu = 40, sigma = 5. Grenzen a en b sluiten het middelste gebied af.
+
+Opdracht 51
+Het gebied onder de normaalkromme in figuur 9.20a is in vijf stukken met gelijke oppervlakte verdeeld.
+a Bereken a, b, c en d.
+De gebieden in de figuren 9.20b en 9.20c zijn symmetrisch.
+b Bereken p, q, r en s.
+Figuur 9.20:
+- a: mu = 1000, sigma = 50 (grenzen a, b, c, d)
+- b: mu = 150, sigma = 12, opp = 0,82 (grenzen p, q)
+- c: mu = 58, sigma = 6, opp = 0,12 (grenzen r, s in de staarten)
+
+Opdracht 52
+Van een normale verdeling is mu = 2,3 en sigma = 0,08. De verticale lijn bij a deelt het gebied onder de normaalkromme tussen 2,18 en 2,36 in twee stukken met gelijke oppervlakte.
+Bereken a.
+
+Opdracht 53
+Bij de normaalkrommen in figuur 9.21 is telkens sigma of mu onbekend. Gebruik de vuistregels bij de normale verdeling om een schatting van sigma of mu te geven.
+Figuur 9.21:
+- a: mu = 10, sigma = ?, opp = 0,15 links van grens 7
+- b: mu = 500, sigma = ?, opp = 0,03 rechts van grens 600
+- c: mu = ?, sigma = 15, opp = 0,16 rechts van grens 105
+
+Opdracht 54
+Van de normaalkromme in figuur 9.22 is mu = 400 en is sigma onbekend. Verder is gegeven dat de oppervlakte van het gebied links van 450 gelijk is aan 0,78.
+a Geef een schatting van sigma op grond van figuur 9.22. Welk venster is dus een geschikte keuze?
+b Bereken de standaardafwijking. Rond af op één decimaal.
+
+Opdracht 55
+Van de normaalkromme in figuur 9.23 is sigma = 12 en is mu onbekend. De oppervlakte van het gebied links van 170 is 0,08.
+a Geef een schatting van mu op grond van figuur 9.23. Welk venster is dus een geschikte keuze?
+b Bereken mu. Rond af op gehelen.
+
+Opdracht 56
+Bij een normale verdeling is sigma = 3,8. De oppervlakte van het gebied onder de normaalkromme rechts van 17 is 0,28.
+Maak een schets van de situatie en bereken mu. Rond af op één decimaal.
+
+Opdracht 57
+Bij een normale verdeling is mu = 2200. Het gebied onder de normaalkromme tussen 2080 en 2320 heeft een oppervlakte van 0,62.
+Bereken sigma. Rond af op tientallen.
+
+Opdracht 58
+De oppervlakte van het gebied onder een normaalkromme rechts van 14,6 is gelijk aan 0,41.
+a Bereken mu als gegeven is dat sigma = 3,5. Rond af op één decimaal.
+b Bereken sigma als gegeven is dat mu = 12,3. Rond af op één decimaal.
+
+Opdracht 59
+Zie het voorbeeld op bladzijde 89. Daar wordt met de GR een vergelijking opgelost waarbij y2 = 0,83 is gebruikt. Je kunt ook een vergelijking oplossen waarbij y2 = 23 gebruikt.
+Wat voer je dan bij y1 in? Controleer of je hetzelfde antwoord krijgt.
+
+Opdracht 60
+Van een groep jongens is de lengte normaal verdeeld met gemiddelde 178 cm en standaardafwijking 5,4 cm.
+a Schets een normaalkromme en geef hierin het gebied aan dat hoort bij de jongens die langer zijn dan 182 cm. Bereken de oppervlakte van dit gebied.
+b Hoeveel procent van de jongens is langer dan 182 cm?
+c Wat is de kans dat een willekeurig gekozen jongen uit deze groep langer is dan 182 cm?
+
+Opdracht 61
+a Zou het antwoord bij het eerste voorbeeld anders zijn geweest als in de vraag "minstens 575 kg" had gestaan? Licht toe.
+b Waarom is in het tweede voorbeeld het eindantwoord naar boven afgerond?
+
+Opdracht 62
+Uit onderzoek blijkt dat de lengte van volwassen forellen in een rivier normaal verdeeld is met mu = 45 cm en sigma = 5 cm.
+a Hoeveel procent van de volwassen forellen heeft een lengte van minder dan 36 cm?
+b Bereken de kans dat een volwassen forel een lengte heeft tussen 44 en 52 cm.
+c In een week worden 240 volwassen forellen gevangen. Hoeveel daarvan, verwacht je, zijn langer dan 53 cm?
+d Hoeveel procent van de volwassen forellen heeft een lengte die minder dan 4 cm van het gemiddelde afwijkt?
+
+Opdracht 63
+Van de 1600 mannelijke werknemers van een bedrijf is het gewicht normaal verdeeld met mu = 78 kg en sigma = 12 kg.
+a Hoeveel van deze mannen zijn naar verwachting zwaarder dan 60 kg? En hoeveel lichter dan 65 kg?
+b Bereken de kans dat het gewicht van een man uit deze groep meer dan 5 kg van het gemiddelde afwijkt.
+c Hoeveel van deze werknemers, verwacht je, wegen meer dan 105 kg?
+d De 10% zwaarste mannen worden door de bedrijfsarts opgeroepen voor controle. Vanaf welk gewicht in gehele kg kun je een oproep verwachten?
+
+Opdracht 64
+Van een bepaald type batterij is de levensduur normaal verdeeld met mu = 85 uur en sigma = 280 minuten.
+a De fabrikant garandeert een levensduur van 78 uur. Hoeveel procent van de batterijen voldoet niet aan deze garantie?
+b Door een verandering in het fabricageproces weet de fabrikant de standaardafwijking terug te brengen tot 170 minuten. Hoeveel procent voldoet nu niet aan de garantie?
+
+Opdracht 65
+Op een visafslag wordt een partij sardientjes aangeboden met een gemiddelde lengte van 11,5 cm en een standaardafwijking van 18 mm. Ga ervan uit dat de lengte normaal verdeeld is. De vissen worden verdeeld in vier klassen.
+klasse I: minder dan 9 cm
+klasse II: van 9 cm tot 11 cm
+klasse III: van 11 cm tot 13 cm
+klasse IV: meer dan 13 cm
+a Bereken van elke klasse hoeveel procent van de sardientjes ertoe behoort.
+Er wordt besloten over te gaan op een verdeling in drie klassen zo, dat elke klasse evenveel sardientjes bevat.
+b Bereken de grenzen van de middelste klasse. Rond af op mm.
+
+Opdracht 66
+Op een visafslag wordt een partij sardientjes aangeboden met een gemiddelde lengte van 11,5 cm en een standaardafwijking van 18 mm. Ga ervan uit dat de lengte normaal verdeeld is. Neem aan dat de sardientjes met een lengte van minstens 12 cm worden verdeeld in twee klassen die evenveel sardientjes bevatten. Bereken in mm nauwkeurig de grens tussen deze klassen.
+
+Opdracht 67
+In een groep sollicitanten is het IQ normaal verdeeld met mu = 115,2 en sigma = 13,1. De sollicitanten van wie het IQ tot de hoogste 10% behoort, komen in aanmerking voor een vervolgtest. De sollicitanten met de volgende 25% van de IQ-waarden krijgen een herkansing.
+a Vanaf welk IQ mag je aan de vervolgtest meedoen? Rond af op gehelen.
+b Bij welk IQ krijg je een herkansing? Rond af op gehelen.
+
+Opdracht 68
+Een machine vult pakken groente met een gemiddeld gewicht van 250 gram. De fabrikant wil dat 90% van de pakken een gewicht heeft dat maximaal 5 gram afwijkt van deze 250 gram.
+a Welke standaardafwijking accepteert hij? Neem aan dat het vulgewicht normaal verdeeld is en rond af op twee decimalen.
+Een andere vulmachine van pakken groente heeft een standaardafwijking van 4 gram. De fabrikant wil het gemiddelde zo instellen dat niet meer dan 10% van de pakken minder dan 250 gram bevat.
+b Op welk gemiddelde moet hij de machine instellen? Ga weer uit van een normale verdeling en rond af op gehelen.
+
+Opdracht 69
+Op een pak wasmiddel van het merk Bright staat dat de inhoud 2,5 kg is. De inhoud van de pakken is normaal verdeeld met sigma = 0,12 kg.
+a Neem aan dat de vulmachine is ingesteld op een gemiddeld gewicht van 2,52 kg. Bereken de kans dat een willekeurig pak Bright minder dan 2,5 kg weegt.
+b Neem aan dat de vulmachine is ingesteld op een gemiddeld gewicht van 2,56 kg. Hoeveel procent van de pakken wijkt meer dan 0,3 kg af van het gemiddelde gewicht?
+c De fabrikant wil dat maximaal 4% van de pakken Bright minder dan 2,5 kg bevat. Op welk gemiddelde moet hij de vulmachine instellen?
+d Bij een controle blijkt 1 op de 50 pakken wasmiddel meer dan 2,72 kg te bevatten. Op welk gemiddelde is de vulmachine ingesteld? Rond af op twee decimalen.
+e Neem aan dat de vulmachine is ingesteld op een gemiddelde van 2,53 kg. De fabrikant besluit de pakken met een inhoud tussen 2,50 kg en 2,60 kg in twee partijen te verdelen die beide evenveel pakken bevatten. Bereken bij welk gewicht hij de grens moet leggen.
+
+Opdracht 70
+De productietijd van een zeker artikel bij de firma Driessen is normaal verdeeld met een gemiddelde van 1 uur en 3 minuten.
+a Bereken de kans dat de productietijd van zo'n artikel minder dan 4 minuten afwijkt van het gemiddelde in het geval de standaardafwijking 125 seconden is.
+b Bereken de standaardafwijking in seconden nauwkeurig als de productietijd van 30% van deze artikelen meer dan 2,5 minuut afwijkt van het gemiddelde.
+c Op een dag produceert Driessen 7000 van deze artikelen. Van 1 op de 5 exemplaren is de productietijd meer dan 66 minuten. Bereken de standaardafwijking in seconden nauwkeurig.
+
+Opdracht 71
+Uit onderzoek is bekend dat het kopergehalte van de messing sierkannetjes van fabrikant Zomerhuis normaal verdeeld is met een gemiddelde van 68%.
+Per 100 kannetjes zijn er 9 met een kopergehalte van meer dan 70%.
+De kannetjes met een kopergehalte van minder dan 65,5% worden uit de handel genomen.
+Hoeveel zijn dat er naar verwachting bij een productie van 500 stuks?

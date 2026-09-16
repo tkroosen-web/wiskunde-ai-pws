@@ -1,0 +1,668 @@
+Opdracht 1
+a P(X = 17) = 5/25 = 0,2
+b P(Y = 1) = 8/25 = 0,32
+c P(X = 16 en Y = 1) = 7/25 = 0,28
+
+Opdracht 2
+a P(X >= 2) = 1 - P(X <= 1)
+b P(X >= 2) = P(X = 2) + P(X = 3) + P(X = 4)
+c P(X < 2) = P(X = 0) + P(X = 1)
+d P(minstens één witte) = P(X >= 1)
+e P(hoogstens drie witte) = P(X <= 3)
+f P(alleen maar witte) = P(X = 4)
+
+Opdracht 3
+a P(X = 2) = P(2 witte en 3 niet-witte) = ( (5 boven 2) * (10 boven 3) ) / (15 boven 5) ≈ 0,400
+b P(Y = 0) = P(rrrr) = (7/15)^4 ≈ 0,047
+c P(Y <= 3) = 1 - P(Y = 4) = 1 - P(rrrr) = 1 - (8/15)^4 ≈ 0,919
+
+Opdracht 4
+a P(X = 2) = ( (5 boven 2) * (5 boven 2) ) / (10 boven 4) ≈ 0,476
+b P(X >= 1) = 1 - P(X = 0) = 1 - (5 boven 4) / (10 boven 4) ≈ 0,976
+
+Opdracht 5
+a P(X = 8) = (10 boven 8) * 0,86^8 * 0,14^2 ≈ 0,264
+b P(X < 9) = 1 - P(X = 9) - P(X = 10) = 1 - (10 boven 9) * 0,86^9 * 0,14 - 0,86^10 ≈ 0,418
+
+Opdracht 6
+a P(X = 6) = (10 boven 6) * 0,70^6 * 0,30^4 ≈ 0,200
+b P(Y = 3) = (10 boven 3) * 0,23^3 * 0,77^7 ≈ 0,234
+c P(Y >= 2) = 1 - P(Y = 0) - P(Y = 1) = 1 - 0,77^10 - (10 boven 1) * 0,23 * 0,77^9 ≈ 0,708
+d P(X = 8 en Y = 2) = (10 boven 8) * 0,70^8 * 0,23^2 ≈ 0,137
+
+Opdracht 7
+P(X = 20) = P(2 enveloppen met 10 euro) = 8/20 * 7/19 ≈ 0,147
+P(X > 0) = 1 - P(X = 0) = 1 - P(2 lege enveloppen) = 1 - 12/20 * 11/19 ≈ 0,653
+
+Opdracht 8
+a P(X = 16) = 25/83 ≈ 0,301
+b P(X = 16) + P(X = 17) + P(X = 18) = 1
+
+Opdracht 9
+a Omdat er drie niet-witte knikkers zijn en er zonder terugleggen wordt gepakt, is het mogelijk om als vierde knikker een witte te pakken, maar niet als vijfde.
+b P(X = 4) = 1 - P(X = 1) - P(X = 2) - P(X = 3), want P(X = 1) + P(X = 2) + P(X = 3) + P(X = 4) = 1.
+
+Opdracht 10
+P(X = 1) = P(r) = 6/10 = 0,6
+P(X = 2) = P(wr) = 4/10 * 6/9 ≈ 0,267
+P(X = 3) = P(wwr) = 4/10 * 3/9 * 6/8 = 0,1
+P(X = 4) = P(wwwr) = 4/10 * 3/9 * 2/8 * 6/7 ≈ 0,029
+P(X = 5) = P(wwwwr) = 4/10 * 3/9 * 2/8 * 1/7 * 1 ≈ 0,005
+
+Tabel voor X:
+x | 1 | 2 | 3 | 4 | 5
+P(X = x) | 0,6 | 0,267 | 0,1 | 0,029 | 0,005
+
+Opdracht 11
+P(X = 0) = 0,25^3 ≈ 0,016
+P(X = 1) = (3 boven 1) * 0,75 * 0,25^2 ≈ 0,141
+P(X = 2) = (3 boven 2) * 0,75^2 * 0,25 ≈ 0,422
+P(X = 3) = 0,75^3 ≈ 0,422
+
+Tabel voor X:
+x | 0 | 1 | 2 | 3
+P(X = x) | 0,016 | 0,141 | 0,422 | 0,422
+
+Opdracht 12
+a P(Lotte wint in 2 sets) = P(LL) = 0,6 * 0,6 = 0,36
+b P(Gijs wint de eerste set en Lotte de volgende twee sets) = P(GLL) = 0,4 * 0,6 * 0,6 = 0,144
+c P(de partij duurt 3 sets) = P(LGL) + P(LGG) + P(GLL) + P(GLG) = 0,6 * 0,4 * 0,6 + 0,6 * 0,4 * 0,4 + 0,4 * 0,6 * 0,6 + 0,4 * 0,6 * 0,4 = 0,48
+
+Alternatieve uitwerking:
+P(de partij duurt 3 sets) = P(LG*) + P(GL*) = 0,6 * 0,4 * 1 + 0,4 * 0,6 * 1 = 0,48
+d P(Y = 2) = P(LL) + P(GG) = 0,6 * 0,6 + 0,4 * 0,4 = 0,52
+P(Y = 3) zie vraag c
+
+Tabel voor Y:
+y | 2 | 3
+P(Y = y) | 0,52 | 0,48
+
+Opdracht 13
+P(Z = 2) = P(BB) + P(FF) = 0,65 * 0,65 + 0,35 * 0,35 = 0,545
+P(Z = 3) = 1 - P(Z = 2) = 1 - 0,545 = 0,455
+
+Tabel voor Z:
+z | 2 | 3
+P(Z = z) | 0,545 | 0,455
+
+Opdracht 14
+P(A = 1) = P(S) = 0,6
+P(A = 2) = P(gS) = 0,4 * 0,3 = 0,12
+P(A = 3) = P(ggS) = 0,4 * 0,7 * 0,3 = 0,084
+P(A = 4) = P(ggg*) = 0,4 * 0,7 * 0,7 * 1 = 0,196
+
+Tabel voor A:
+a | 1 | 2 | 3 | 4
+P(A = a) | 0,6 | 0,12 | 0,084 | 0,196
+
+Opdracht 15
+P(X = 4) = P(wwww) = 4/6 * 3/5 * 2/4 * 1/3 = 1/15
+P(X = 5) = P(1 witte) = (4 boven 1) * 2/6 * 4/5 * 3/4 * 2/3 * 1/2 = 4/15
+P(X = 6) = P(2 witte) = (5 boven 2) * 2/6 * 1/5 * 4/4 * 3/3 * 1 * 1 = 2/3
+
+Tabel voor X:
+x | 4 | 5 | 6
+P(X = x) | 1/15 | 4/15 | 2/3
+
+Opdracht 16
+De opbrengst per week is 1000 * 5 = 5000 euro.
+De uitbetaling per week is 2000 + 100 * 20 = 4000 euro.
+De winst per week is 5000 - 4000 = 1000 euro.
+Dat is gemiddeld per lot 1 euro.
+
+Opdracht 17
+a 
+Tabel voor U:
+u | 15 | 11 | 7 | 3
+P(U = u) | 1/27 | 6/27 | 12/27 | 8/27
+
+E(U) = 15 * 1/27 + 11 * 6/27 + 7 * 12/27 + 3 * 8/27 = 7 euro
+
+b E(W) = E(U) - inleg = 7 - 8 = -1 euro
+
+Opdracht 18
+a W = winst per spel, dus W = uitbetaling - 2
+P(W = 48) = 1/100 = 0,01
+P(W = 8) = 3/100 = 0,03
+P(W = -2) = 96/100 = 0,96
+
+Tabel voor W:
+w | 48 | 8 | -2
+P(W = w) | 0,01 | 0,03 | 0,96
+
+E(W) = -2 * 0,96 + 8 * 0,03 + 48 * 0,01 = -1,20
+De winstverwachting is -€ 1,20 per lot.
+
+b Een lot moet dan 2 - 1,20 = € 0,80 kosten.
+
+Opdracht 19
+W = winst per spel, dus W = uitbetaling - 8
+
+Tabel voor W:
+w | 8 | 3 | -2
+P(W = w) | 1/36 | 10/36 | 25/36
+
+E(W) = 8 * 1/36 + 3 * 10/36 - 2 * 25/36 = -12/36 ≈ -0,33
+De verwachtingswaarde van de winst is -€ 0,33 per spel.
+
+Opdracht 20
+a P(één keer 5 ogen) = (3 boven 1) * 1/6 * (5/6)^2 = 75/216
+b P(2 dollar uitbetaald) = P(twee keer 5 ogen) = (3 boven 2) * (1/6)^2 * 5/6 = 15/216
+c P(geen uitbetaling) = P(geen 5 ogen) = (5/6)^3 = 125/216
+d W = winst per spel voor de organisator = 1 - uitbetaling
+P(W = -2) = P(drie keer 5 ogen) = (1/6)^3 = 1/216
+
+Opdracht 21
+X = aantal knikkers dat Monique pakt
+P(X = 1) = P(w) = 6/10
+P(X = 2) = P(rw) = 4/10 * 6/9 = 24/90
+P(X = 3) = P(rrw) = 4/10 * 3/9 * 6/8 = 72/720
+P(X = 4) = P(rrrw) = 4/10 * 3/9 * 2/8 * 6/7 = 144/5040
+P(X = 5) = P(rrrrw) = 4/10 * 3/9 * 2/8 * 1/7 * 1 = 24/5040
+
+Tabel voor X:
+x | 1 | 2 | 3 | 4 | 5
+P(X = x) | 6/10 | 24/90 | 72/720 | 144/5040 | 24/5040
+
+E(X) = 1 * 6/10 + 2 * 24/90 + 3 * 72/720 + 4 * 144/5040 + 5 * 24/5040 = 7920/5040 = 1 4/7
+
+Opdracht 22
+a P(drie keer 6 ogen) = (8 boven 3) * (1/6)^3 * (5/6)^5 ≈ 0,104
+b P(meer dan 2 ogen) = P(3, 4, 5 of 6 ogen) = 4/6
+P(vijf keer meer dan 2 ogen) = (8 boven 5) * (4/6)^5 * (2/6)^3 ≈ 0,273
+
+Opdracht 23
+a n = 10, p = 4/6 = 2/3 en k = 6
+b P(Y = 6) = (10 boven 6) * (2/3)^6 * (1/3)^4 ≈ 0,228 en dat is hetzelfde antwoord.
+
+Opdracht 24
+a n = 6 en p = 8/20 = 0,4
+P(X = 4) = (6 boven 4) * 0,4^4 * 0,6^2 ≈ 0,138
+b n = 12 en p = (8 + 10)/20 = 0,9
+P(Y = 10) = (12 boven 10) * 0,9^10 * 0,1^2 ≈ 0,230
+c Nee, ze pakt zonder terugleggen en dus voert ze niet telkens hetzelfde experiment uit.
+P(Z = 3) = P(3 groene en 1 niet-groene) = ( (10 boven 3) * (10 boven 1) ) / (20 boven 4) ≈ 0,248
+
+Opdracht 25
+a X = aantal keer slag
+P(X = 5) = (10 boven 5) * 0,3^5 * 0,7^5 ≈ 0,103
+b P(alleen de laatste beurt slag) = P(sssss) = 0,7^4 * 0,3 ≈ 0,072
+
+Opdracht 26
+a P(X <= 2) = P(X = 0) + P(X = 1) + P(X = 2) = 0,512 + 0,384 + 0,096 = 0,992
+b P(X <= 3) is de kans op alle mogelijke uitkomsten bij dit kansexperiment en deze kans is 1.
+c Er zijn geen waarden kleiner dan 0 mogelijk.
+d 
+Tabel voor cumulatieve kansen:
+x | 0 | 1 | 2 | 3
+P(X <= x) | 0,512 | 0,896 | 0,992 | 1
+
+Opdracht 27
+a P(X = 3) = (7 boven 3) * (1/3)^3 * (2/3)^4 ≈ 0,273
+b Er is geen sprake van succes en mislukking.
+
+Opdracht 28
+a X = aantal keer wit
+X is binomiaal verdeeld met n = 10 en p = 1/6.
+De GR geeft P(X = 3) ≈ 0,155.
+b X = aantal keer rood
+X is binomiaal verdeeld met n = 12 en p = 2/6.
+De GR geeft P(X <= 5) ≈ 0,822.
+c X = aantal keer blauw
+X is binomiaal verdeeld met n = 9 en p = 3/6.
+P(X >= 1) = 1 - P(X = 0)
+De GR geeft P(X >= 1) ≈ 0,998.
+d P(vijf keer blauw en drie keer rood) = (8 boven 5) * (3/6)^5 * (2/6)^3 ≈ 0,065
+e P(acht keer blauw, vijf keer rood en drie keer wit) = (16 boven 8) * (8 boven 5) * (3/6)^8 * (2/6)^5 * (1/6)^3 ≈ 0,054
+
+Opdracht 29
+a X = aantal keer eerste opslag in
+X is binomiaal verdeeld met n = 10 en p = 0,55.
+De GR geeft P(X = 5) ≈ 0,234.
+b P(alleen de laatste vier in) = 0,45^2 * 0,55^4 ≈ 0,019
+
+Opdracht 30
+a X = aantal dat te hard rijdt
+X is binomiaal verdeeld met n = 60 en p = 0,16.
+De GR geeft P(X = 10) ≈ 0,136.
+b X = aantal dat 140 km/uur of meer rijdt
+X is binomiaal verdeeld met n = 60 en p = 1/4 * 0,16 = 0,04.
+De GR geeft P(X <= 2) ≈ 0,568.
+c X = aantal met een snelheid tussen 120 en 140 km/uur
+Een kwart van 60 is 1/4 * 60 = 15.
+X is binomiaal verdeeld met n = 60 en p = 0,16 - 1/4 * 0,16 = 0,12.
+De GR geeft P(X = 15) ≈ 0,003.
+
+Opdracht 31
+X = aantal ondeugdelijke accu's
+X is binomiaal verdeeld met n = 54 en p = 0,2.
+De GR geeft P(X <= 3) ≈ 0,003.
+
+Opdracht 32
+a P(X >= 4)
+b P(X < 8)
+c P(X > 5) = 1 - P(X <= 5)
+d P(X >= 10) = 1 - P(X <= 9)
+e P(X < 7) = P(X <= 6)
+f P(12 <= X <= 20) = P(X <= 20) - P(X <= 11)
+g P(4 < X < 12) = P(X <= 11) - P(X <= 4)
+h P(2 <= X < 5) = P(X <= 4) - P(X <= 1)
+i P(4 < X <= 8) = P(X <= 8) - P(X <= 4)
+j P(X tussen 8 en 20) = P(8 < X < 20) = P(X <= 19) - P(X <= 8)
+
+Opdracht 33
+a P(X < 10) = P(X <= 9)
+De GR geeft P(X < 10) ≈ 0,347.
+b P(X >= 8) = 1 - P(X <= 7)
+De GR geeft P(X >= 8) ≈ 0,889.
+c P(meer dan 12 keer succes) = P(X > 12) = 1 - P(X <= 12)
+De GR geeft P(meer dan 12 keer succes) ≈ 0,208.
+d P(tussen 9 en 16 keer succes) = P(9 < X < 16) = P(X <= 15) - P(X <= 9)
+De GR geeft P(tussen 9 en 16 keer succes) ≈ 0,631.
+e P(minstens 6 keer succes) = P(X >= 6) = 1 - P(X <= 5)
+De GR geeft P(minstens 6 keer succes) ≈ 0,982.
+f P(9 of 10 keer succes) = P(X = 9 of X = 10) = P(X = 9) + P(X = 10)
+De GR geeft P(9 of 10 keer succes) ≈ 0,294.
+
+Opdracht 34
+a X = aantal keer appel
+X is binomiaal verdeeld met n = 10 en p = 3/6 = 1/2.
+P(X >= 5) = 1 - P(X <= 4)
+De GR geeft P(X >= 5) ≈ 0,623.
+b X = aantal keer appel
+X is binomiaal verdeeld met n = 25 en p = 3/6 = 1/2.
+P(10 < X < 20) = P(X <= 19) - P(X <= 10)
+De GR geeft P(10 < X < 20) ≈ 0,786.
+c X = aantal keer appel
+X is binomiaal verdeeld met n = 100 en p = 3/6 = 1/2.
+P(X > 60) = 1 - P(X <= 60)
+De GR geeft P(X > 60) ≈ 0,018.
+d X = aantal keer kersen
+X is binomiaal verdeeld met n = 35 en p = 1/6.
+De GR geeft P(X = 7) ≈ 0,146.
+
+Tabel voor W:
+w | 1 | 0 | -1 | -2
+P(W = w) | 125/216 | 75/216 | 15/216 | 1/216
+
+E(W) = 1 * 125/216 + 0 * 75/216 - 1 * 15/216 - 2 * 1/216 = 108/216 = 0,5
+Het spel brengt naar verwachting 500 * 0,5 = 250 dollar op.
+
+Opdracht 35
+a X = aantal keer twee rode knikkers
+X is binomiaal verdeeld met n = 15 en p = P(twee rode) = (12 boven 2) / (25 boven 2) = 11/50.
+De GR geeft P(X = 3) ≈ 0,246.
+b X = aantal keer één zwarte knikker
+X is binomiaal verdeeld met n = 15 en p = P(één zwarte) = ( (8 boven 1) * (17 boven 1) ) / (25 boven 2) = 34/75.
+P(X >= 10) = 1 - P(X <= 9)
+De GR geeft P(X >= 10) ≈ 0,081.
+c X = aantal keer twee knikkers van dezelfde kleur
+X is binomiaal verdeeld met n = 15 en p = P(twee van dezelfde kleur) = P(twee rode) + P(twee zwarte) + P(twee witte) = (12 boven 2)/(25 boven 2) + (8 boven 2)/(25 boven 2) + (5 boven 2)/(25 boven 2) = 26/75.
+P(X < 6) = P(X <= 5)
+De GR geeft P(X < 6) ≈ 0,575.
+d X = aantal keer minstens één rode knikker
+X is binomiaal verdeeld met n = 15 en
+p = P(minstens één rode) = 1 - P(geen rode) = 1 - (13 boven 2) / (25 boven 2) = 37/50.
+P(X >= 8) = 1 - P(X <= 7)
+De GR geeft P(X >= 8) ≈ 0,978.
+
+Opdracht 36
+a X = aantal kinderen uit een eenoudergezin
+X is binomiaal verdeeld met n = 11 en p = 0,11.
+De GR geeft P(X = 0) ≈ 0,278.
+b X = aantal kinderen uit een eenoudergezin
+X is binomiaal verdeeld met n = 22 en p = 0,11.
+De GR geeft P(X <= 2) ≈ 0,558.
+c P(twee uit een eenoudergezin) = ( (5 boven 2) * (30 boven 4) ) / (35 boven 6) ≈ 0,169
+
+Opdracht 37
+X = aantal passagiers dat komt opdagen
+X is binomiaal verdeeld met n = 100 en p = 0,88.
+De GR geeft P(X <= 92) ≈ 0,924.
+De kans dat iedereen die komt opdagen een plaats heeft is 0,924.
+
+Opdracht 38
+X = aantal gasten dat komt opdagen
+X is binomiaal verdeeld met onbekende n en p = 0,92.
+Voor welke n is P(X <= 190) >= 0,95?
+Voer bij y1 een formule in en maak een tabel.
+Op de TI: y1 = binomcdf(x, 0.92, 190).
+Op de Casio: y1 = BinomialCD(190, x, 0.92).
+Op de NW: y1 = binomcdf(190, x, 0.92).
+Op de HP: y1 = BINOMIAL_CDF(x, 0.92, 190).
+Je leest af voor n = 200 is P(X <= 190) ≈ 0,963
+voor n = 201 is P(X <= 190) ≈ 0,933.
+Er kunnen dagelijks hoogstens 200 stoelen worden verhuurd.
+
+Opdracht 39
+a P(6 ogen) = 1/6 en 30 * 1/6 = 5.
+b X is binomiaal verdeeld met n = 30 en p = 1/6.
+De GR geeft de kansen in de tabel.
+
+Tabel voor X:
+x | 3 | 4 | 5 | 6 | 7
+P(X = x) | 0,137 | 0,185 | 0,192 | 0,160 | 0,110
+
+Opdracht 40
+a De verwachtingswaarde is E(X) = np = 140 * 0,4 = 56 en de standaardafwijking is sigma_X = √(np(1 - p)) = √(140 * 0,4 * 0,6) ≈ 5,8.
+E(X) - sigma_X ≈ 56 - 5,8 = 50,2
+E(X) + sigma_X ≈ 56 + 5,8 = 61,8
+P(50,2 < X < 61,8) = P(51 <= X <= 61)
+De GR geeft P(51 <= X <= 61) ≈ 0,657.
+b X = aantal keer zes ogen
+E(X) = np = 1000 * 1/6 = 166,66...
+sigma_X = √(np(1 - p)) = √(1000 * 1/6 * 5/6) ≈ 11,78...
+E(X) - 2 * sigma_X = 166,66... - 2 * 11,78... = 143,09...
+E(X) + 2 * sigma_X = 166,66... + 2 * 11,78... = 190,23...
+P(X < 143,09...) + P(X > 190,23...) = P(X <= 143) + P(X >= 191) = P(X <= 143) + 1 - P(X <= 190)
+De GR geeft P(X <= 143) + P(X >= 191) ≈ 0,046.
+
+Opdracht 41
+Deze bewering is waar.
+
+Opdracht 42
+a X = aantal offertes voor occasions dat tot verkoop leidt
+X is binomiaal verdeeld met onbekende n en p = 0,28.
+E(X) = np = 21
+0,28n = 21
+n = 75
+Dus Nico heeft 75 offertes voor occasions opgesteld.
+
+b X is binomiaal verdeeld met n = 100 en p = 0,28.
+E(X) = np = 100 * 0,28 = 28
+sigma_X = \u221a(np(1 - p)) = \u221a(100 * 0,28 * 0,72) = 4,489...
+E(X) - 2 * sigma_X = 28 - 2 * 4,489... = 19,02...
+Dus 19 of minder offertes leidden tot verkoop.
+
+c Y = aantal offertes voor nieuwe auto's dat tot verkoop leidt
+Y is binomiaal verdeeld met n = 217 en onbekende p.
+E(Y) + 2 * sigma_Y = 90, oftewel np + 2 * \u221a(np(1 - p)) = 90.
+Los op 217p + 2 * \u221a(217p(1 - p)) = 90.
+Voer in y1 = 217x + 2 * \u221a(217x(1 - x)) en y2 = 90.
+De optie snijpunt geeft x = 0,3499...
+Dus p = 0,350.
+
+Opdracht 43
+a Dit volgt uit de vuistregels bij de normale verdeling.
+13,5% + 2,5% = 16% komt overeen met een oppervlakte van 0,16.
+b a oppervlakte = 0,135
+b oppervlakte = 0,975
+c oppervlakte = 0,05
+d oppervlakte = 0,84
+
+Opdracht 44
+a Normale verdeling met mu = 3,5 en sigma = 1,1.
+Bij l = -10^99 en r = 5 geeft de GR opp ≈ 0,914.
+b Normale verdeling met mu = 850 en sigma = 120.
+Bij l = 700 en r = 10^99 geeft de GR opp ≈ 0,894.
+c Normale verdeling met mu = 1080 en sigma = 60.
+Bij l = 1000 en r = 1100 geeft de GR opp ≈ 0,539.
+
+Opdracht 45
+a Normale verdeling met mu = 520 en sigma = 18.
+Bij l = -10^99 en r = 480 geeft de GR opp ≈ 0,013.
+b Bij l = 510 en r = 10^99 geeft de GR opp ≈ 0,711.
+
+Opdracht 46
+a Normale verdeling met mu = 5,8 en sigma = 0,4.
+Bij l = -10^99 en r = 5,1 geeft de GR opp ≈ 0,040.
+Dus 4,0%.
+b Bij l = 5,25 en r = 10^99 geeft de GR opp ≈ 0,915.
+Dus 91,5%.
+c Bij l = 6,1 en r = 6,4 geeft de GR opp ≈ 0,160.
+Dus 16,0%.
+
+Opdracht 47
+a Neem bijvoorbeeld een normale verdeling met mu = 0 en sigma = 1.
+Bij l = -1 en r = 1 geeft de GR opp ≈ 0,6827.
+Dus dat percentage is 68,27%.
+b Ga weer uit van mu = 0 en sigma = 1.
+Bij l = -2 en r = 2 geeft de GR opp ≈ 0,9545.
+Dat percentage is 95,45%.
+
+Opdracht 48
+Deze oppervlakte is 1 - 0,65 = 0,35.
+
+Opdracht 49
+a Normale verdeling met mu = 16 en sigma = 2.
+opp links van a is 0,3
+De GR geeft a ≈ 15,0.
+b Normale verdeling met mu = 50 en sigma = 8.
+opp links van a is 1 - 0,7 = 0,3
+De GR geeft a ≈ 45,8.
+c Normale verdeling met mu = 600 en sigma = 70.
+opp links van a is 0,86
+De GR geeft a ≈ 676.
+d Normale verdeling met mu = 0,8 en sigma = 0,2.
+opp links van a is 1 - 0,08 = 0,92
+De GR geeft a ≈ 1,08.
+
+Opdracht 50
+Normale verdeling met mu = 40 en sigma = 5.
+opp links van a is 1/3 en links van b is 2/3.
+De GR geeft a ≈ 37,8 en b ≈ 42,2.
+
+Opdracht 51
+a Normale verdeling met mu = 1000 en sigma = 50.
+opp links van a is 1/5, links van b is 2/5, links van c is 3/5 en links van d is 4/5.
+De GR geeft a ≈ 958 en b ≈ 987 en c ≈ 1013 en d ≈ 1042.
+b Normale verdeling met mu = 150 en sigma = 12.
+opp links van p is 1/2 * (1 - 0,82) = 0,09 en links van q is 1 - 0,09 = 0,91.
+De GR geeft p ≈ 133,9 en q ≈ 166,1.
+Normale verdeling met mu = 58 en sigma = 6.
+opp links van r is 1/2 * 0,12 = 0,06 en links van s is 1 - 0,06 = 0,94.
+De GR geeft r ≈ 48,7 en s ≈ 67,3.
+
+Opdracht 52
+Normale verdeling met mu = 2,3 en sigma = 0,08.
+Bij l = 2,18 en r = 2,36 geeft de GR opp (I + II) ≈ 0,70657,
+dus opp (I) ≈ 1/2 * 0,70657 ≈ 0,3533.
+Bij l = -10^99 en r = 2,18 geeft de GR opp (III) ≈ 0,0668,
+dus opp (I + III) ≈ 0,3533 + 0,0668 = 0,4201.
+De GR geeft a ≈ 2,284.
+
+Opdracht 53
+a Een schatting van sigma is 3, want 7 ligt ongeveer sigma van mu = 10 af.
+b Een schatting van sigma is 50, want 600 ligt ongeveer 2*sigma van mu = 500 af.
+c Een schatting van mu is 90, want 105 ligt ongeveer sigma = 15 van mu af.
+
+Opdracht 82 / Bladzijde 90
+Opdracht 54
+a Een schatting van sigma is 60, want 450 ligt iets minder dan sigma van mu = 400 af.
+Neem x bijvoorbeeld tussen 50 en 70.
+Neem y bijvoorbeeld tussen 0 en 1,5.
+b Normale verdeling met mu = 400, sigma = x, l = -10^99 en r = 450.
+Los op opp = 0,78.
+Voer bij y1 de normale verdeling in en y2 = 0,78.
+De optie snijpunt geeft x = 64,751..., dus sigma ≈ 64,8.
+
+Opdracht 55
+a Een schatting van mu is 190, want 170 ligt iets meer dan sigma = 12 van mu af.
+Neem x bijvoorbeeld tussen 180 en 200.
+Neem y bijvoorbeeld tussen 0 en 0,15.
+b Normale verdeling met mu = x, sigma = 12, l = -10^99 en r = 170.
+Los op opp = 0,08.
+Voer bij y1 de normale verdeling in en y2 = 0,08.
+De optie snijpunt geeft x = 186,8..., dus mu ≈ 187.
+
+Opdracht 56
+Normale verdeling met mu = x, sigma = 3,8, l = 17 en r = 10^99.
+Los op opp = 0,28.
+Voer bij y1 de normale verdeling in en y2 = 0,28.
+De optie snijpunt geeft x = 14,78..., dus mu ≈ 14,8.
+
+Opdracht 57
+Normale verdeling met mu = 2200, sigma = x, l = 2080 en r = 2320.
+Los op opp = 0,62.
+Voer bij y1 de normale verdeling in en y2 = 0,62.
+De optie snijpunt geeft x = 136,6..., dus sigma ≈ 140.
+
+Opdracht 58
+a Normale verdeling met mu = x, sigma = 3,5, l = 14,6 en r = 10^99.
+Los op opp = 0,41.
+Voer bij y1 de normale verdeling in en y2 = 0,41.
+De optie snijpunt geeft x ≈ 13,80..., dus mu ≈ 13,8.
+b Normale verdeling met mu = 12,3, sigma = x, l = 14,6 en r = 10^99.
+Los op opp = 0,41.
+Voer bij y1 de normale verdeling in en y2 = 0,41.
+De optie snijpunt geeft x = 10,10..., dus sigma ≈ 10,1.
+
+Opdracht 59
+Normale verdeling met mu = 28 en sigma = x.
+opp links van 23 is 1 - 0,83 = 0,17
+Op de TI: voer in y1 = invNorm(0.17, 28, x, LINKS).
+Op de Casio: voer in y1 = InvNormCD(0.17, x, 28).
+Op de NW: voer in y1 = invnorm(0.17, 28, x).
+Op de HP: voer in y1 = NORMAL_ICDF(28, x, 0.17).
+De optie snijpunt geeft hetzelfde antwoord.
+
+Opdracht 60
+a Normale verdeling met mu = 178 en sigma = 5,4.
+Bij l = 182 en r = 10^99 geeft de GR opp ≈ 0,229.
+b Van de jongens is 22,9% langer dan 182 cm.
+c De gevraagde kans is 0,229.
+
+Bladzijde 93
+Opdracht 61
+a Nee, het maakt voor de oppervlakte niet uit of de grens er wel of niet bijhoort.
+Dus P(X > 575) = P(X >= 575).
+b Bij een score van 74 zit je nog niet bij de beste 20% van de deelnemers. Dat is pas het geval bij een score van 75 of meer.
+
+Opdracht 62
+a Normale verdeling met mu = 45 en sigma = 5.
+Bij l = -10^99 en r = 36 geeft de GR opp ≈ 0,036.
+Dus 3,6%.
+b X = lengte volwassen forel
+X is normaal verdeeld met mu = 45 en sigma = 5.
+De GR geeft P(44 < X < 52) ≈ 0,499.
+c Bij l = 53 en r = 10^99 geeft de GR opp ≈ 0,054...
+Je verwacht 0,054... * 240 ≈ 13 forellen.
+d Bij l = 41 en r = 49 geeft de GR opp ≈ 0,576.
+Dus 57,6%.
+
+Opdracht 63
+a Normale verdeling met mu = 78 en sigma = 12.
+Bij l = 60 en r = 10^99 geeft de GR opp ≈ 0,933...
+Dus 0,933... * 1600 ≈ 1493 mannen zijn zwaarder dan 60 kg.
+Bij l = -10^99 en r = 65 geeft de GR opp ≈ 0,139...
+Dus 0,139... * 1600 ≈ 223 mannen zijn lichter dan 65 kg.
+b X = gewicht mannelijke werknemer in kg
+X is normaal verdeeld met mu = 78 en sigma = 12.
+De GR geeft 1 - P(73 <= X <= 83) ≈ 0,677.
+
+c Bij l = 105 en r = 10^99 geeft de GR opp ≈ 0,012...
+Dus 0,012... * 1600 ≈ 20 werknemers wegen meer dan 105 kg.
+d opp links van a is 1 - 0,1 = 0,9
+De GR geeft a ≈ 93,4.
+Dus vanaf 94 kg.
+
+d opp links van a is 1 - 0,1 = 0,9
+De GR geeft a ≈ 93,4.
+Dus vanaf 94 kg.
+
+Bladzijde 94
+Opdracht 64
+a 280 minuten = 4 2/3 uur
+Normale verdeling met mu = 85 en sigma = 4 2/3.
+Bij l = -10^99 en r = 78 geeft de GR opp ≈ 0,067.
+Dus 6,7%.
+b 170 minuten = 2 5/6 uur
+Normale verdeling met mu = 85 en sigma = 2 5/6.
+Bij l = -10^99 en r = 78 geeft de GR opp ≈ 0,007.
+Dus 0,7%.
+
+Opdracht 65
+a 18 mm = 1,8 cm
+Normale verdeling met mu = 11,5 en sigma = 1,8.
+Bij l = -10^99 en r = 9 geeft de GR opp (I) ≈ 0,082.
+Bij l = 9 en r = 11 geeft de GR opp (II) ≈ 0,308.
+Bij l = 11 en r = 13 geeft de GR opp (III) ≈ 0,407.
+Bij l = 13 en r = 10^99 geeft de GR opp (IV) ≈ 0,202.
+De percentages zijn 8,2%, 30,8%, 40,7% en 20,2%.
+b opp links van a is 1/3
+De GR geeft a ≈ 10,7.
+opp links van b is 2/3
+De GR geeft b ≈ 12,3.
+De grenzen zijn 10,7 en 12,3 cm.
+
+Opdracht 66
+Normale verdeling met mu = 11,5 en sigma = 1,8.
+Bij l = 12 en r = 10^99 geeft de GR opp (I + II) ≈ 0,3906.
+Dus opp (II) ≈ 1 - 2 * 0,3906 = 0,8047.
+De GR geeft a ≈ 13,0.
+De grens is 13,0 cm.
+
+Bladzijde 95
+Opdracht 67
+a Normale verdeling met mu = 115,2 en sigma = 13,1.
+opp links van a is 1 - 0,1 = 0,9
+De GR geeft a ≈ 131,99.
+Dus vanaf een IQ van 132.
+b opp links van b is 0,9 - 0,25 = 0,65
+De GR geeft b ≈ 120,25.
+Je krijgt een herkansing bij een IQ van 121 tot en met 131.
+
+Opdracht 68
+a Normale verdeling met mu = 250, sigma = x, l = 245 en r = 255.
+Los op opp = 0,90.
+Voer bij y1 de normale verdeling in en y2 = 0,90.
+De optie snijpunt geeft x = 3,039..., dus maximaal sigma = 3,03 gram.
+b Normale verdeling met mu = x, sigma = 4, l = -10^99 en r = 250.
+Los op opp = 0,10.
+Voer bij y1 de normale verdeling in en y2 = 0,10.
+De optie snijpunt geeft x = 255,1..., dus op een gemiddelde van 255 gram.
+
+Opdracht 69
+a X = inhoud pak in kg
+X is normaal verdeeld met mu = 2,52 en sigma = 0,12.
+De GR geeft P(X < 2,5) ≈ 0,434.
+b Bij l = 2,26 en r = 2,86 geeft de GR opp ≈ 0,988.
+De gevraagde oppervlakte is 1 - 0,988 = 0,012.
+Dus 1,2%.
+c Normale verdeling met mu = x, sigma = 0,12, l = -10^99 en r = 2,5.
+Los op opp = 0,04.
+Voer bij y1 de normale verdeling in en y2 = 0,04.
+De optie snijpunt geeft x = 2,710...
+De vulmachine moet worden ingesteld op een gemiddelde van 2,71 kg of meer.
+d Normale verdeling met mu = x, sigma = 0,12, l = 2,72 en r = 10^99.
+Los op opp = 0,02.
+Voer bij y1 de normale verdeling in en y2 = 0,02.
+De optie snijpunt geeft x = 2,473...
+De vulmachine is ingesteld op een gemiddelde van 2,47 kg.
+e Normale verdeling met mu = 2,53 en sigma = 0,12.
+Los op opp (I) = opp (II).
+Voer bij y1 de normale verdeling in met l = 2,50 en r = x en bij y2 de normale verdeling met l = x en r = 2,60.
+De optie snijpunt geeft x = 2,548...
+Hij moet de grens leggen bij een gewicht van 2,548 kg.
+
+Bladzijde 96
+Opdracht 70
+a 1 uur en 3 minuten = 63 * 60 = 3780 seconden
+4 minuten = 240 seconden
+X = productietijd in minuten
+X is normaal verdeeld met mu = 3780 en sigma = 125.
+De GR geeft P(3540 < X < 4020) ≈ 0,945.
+b 2,5 minuten = 150 seconden
+Normale verdeling met mu = 3780, sigma = x,
+l = 3780 - 150 = 3630 en r = 3780 + 150 = 3930.
+Los op opp = 1 - 0,30 = 0,70.
+Voer bij y1 de normale verdeling in en y2 = 0,70.
+De optie snijpunt geeft x = 144,7...
+Dus sigma ≈ 145 seconden.
+c 66 minuten = 66 * 60 = 3960 seconden
+Normale verdeling met mu = 3780, sigma = x, l = 3960 en r = 10^99.
+Los op opp = 0,2.
+Voer bij y1 de normale verdeling in en y2 = 0,2.
+De optie snijpunt geeft x = 213,8...
+Dus sigma ≈ 214 seconden.
+
+Opdracht 71
+Normale verdeling met mu = 68, sigma = x, l = 70 en r = 10^99.
+Los op opp = 0,09.
+Voer bij y1 de normale verdeling in en y2 = 0,09.
+De optie snijpunt geeft x = 1,491...
+Dus sigma ≈ 1,49%.
+
+Normale verdeling met mu = 68 en sigma = 1,49.
+Bij l = -10^99 en r = 65,5 geeft GR opp = 0,046...
+Dat zijn er 0,046... * 500 ≈ 23.
