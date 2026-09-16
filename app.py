@@ -1,10 +1,11 @@
 import streamlit as st
-import ollama
+import groq
 import os
 import re
 import json
 from datetime import datetime
 import pandas as pd
+
 
 # ============================================================
 # WISKUNDE-AI — VWO 5 | GETAL & RUIMTE H9 KANSBEREKENING
@@ -663,32 +664,37 @@ Geef ook geen complete berekening voor de leerling.
 
 
 def vraag_aan_ollama(prompt, context, modus):
+    
     instructie = bouw_instructie(prompt, context, modus)
+    
+    # 🔐 VEILIGE ONLINE SLEUTEL (We koppelen hem straks live in de Streamlit Cloud!)
+    # Als je hem lokaal wilt testen, kun je tijdelijk je gsk_... sleutel hieronder tussen de aanhalingstekens plakken.
+    api_sleutel = st.secrets.get("GROQ_API_KEY", "")
+    
+    if not api_sleutel:
+        return "Fout: De online AI-sleutel (GROQ_API_KEY) is nog niet geconfigureerd in de Streamlit Cloud instellingen."
 
     try:
-        response = ollama.chat(
-            model=MODEL,
+        client = groq.Groq(api_key=api_sleutel)
+        
+        # We gebruiken het officiële, razendsnelle online Llama 3 model van Meta via Groq!
+        response = client.chat.completions.create(
+            model="llama3-8b-8192",
             messages=[
                 {
                     "role": "system",
-                    "content": (
-                        "Je bent een betrouwbare lokale wiskundetutor voor VWO 5. "
-                        "Je moet brongebonden, controleerbaar en didactisch antwoorden."
-                    ),
+                    "content": "Je bent een betrouwbare online wiskundetutor voor VWO 5. Je antwoordt uitsluitend in het Nederlands, brongebonden, controleerbaar en didactisch."
                 },
                 {
                     "role": "user",
-                    "content": instructie,
-                },
-            ],
+                    "content": instructie
+                }
+            ]
         )
-        return response["message"]["content"]
+        return response.choices[0].message.content
     except Exception as e:
-        return (
-            "Ik kan de lokale AI op dit moment niet bereiken. "
-            "Controleer of Ollama actief is en of het model "
-            f"`{MODEL}` beschikbaar is.\n\nTechnische melding: {e}"
-        )
+        return f"Er ging iets mis bij het bereiken van de online AI-tutor: {e}"
+
 
 
 # =========================
