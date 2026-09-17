@@ -945,7 +945,7 @@ with st.sidebar:
             </div>
             <div>
                 <b style="color:#0F172A;">{user_naam}<br>
-                <span style="font-size:100px;color:#64748B;">
+                <span style="font-size:12px;color:#64748B;">
                     {user_rol} · {user_klas}
                 </span>
             </div>
