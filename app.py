@@ -734,22 +734,6 @@ if st.session_state.ingelogde_gebruiker is None:
             unsafe_allow_html=True,
         )
 
-        # 🌐 SMAAK 1: DE VISUELE GOOGLE INLOGKNOP (INTERACTIEVE DEMO)
-        # Prachtige styling die exact lijkt op de officiële Google OAuth knop
-        google_geklikt = st.button(
-            "🛑 Inloggen met Google (Demo)",
-            use_container_width=True,
-            key="google_login_demo_btn"
-        )
-        
-        # Als de docent op de Google-knop klikt, loggen we hem direct geruisloos in!
-        if google_geklikt:
-            st.session_state.ingelogde_gebruiker = "docent@school.nl"
-            st.session_state.actieve_pagina = "Leerling"
-            laad_chatgeschiedenis()
-            st.success("Succesvol ingelogd via Google! Veel succes met wiskunde vandaag.")
-            st.rerun()
-
         st.markdown(
             "<div style='text-align: center; color: #94A3B8; font-size: 13px; margin: 15px 0;'>— OF GEBRUIK JE ACCOUNT —</div>",
             unsafe_allow_html=True
