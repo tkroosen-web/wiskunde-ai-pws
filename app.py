@@ -935,9 +935,9 @@ with st.sidebar:
 
     st.markdown(
         f"""
-        <div style="display:flex;align-items:center;gap:0px;">
+        <div style="display:flex;align-items:center;gap:10px;">
             <div style="
-                width:38px;height:38px;border-radius:50%;
+                width:38px;height:10px;border-radius:50%;
                 background:#2563EB;color:white;
                 display:flex;align-items:center;justify-content:center;
                 font-weight:700;">
