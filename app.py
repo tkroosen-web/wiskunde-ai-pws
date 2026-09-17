@@ -734,11 +734,6 @@ if st.session_state.ingelogde_gebruiker is None:
             unsafe_allow_html=True,
         )
 
-        st.markdown(
-            "<div style='text-align: center; color: #94A3B8; font-size: 13px; margin: 15px 0;'>— OF GEBRUIK JE ACCOUNT —</div>",
-            unsafe_allow_html=True
-        )
-
         # De tabs vullen nu de nieuwe, bredere lay-out prachtig op
         login_tab, register_tab = st.tabs(["Inloggen", "Account aanmaken"])
 
