@@ -710,21 +710,23 @@ def vraag_aan_ollama(prompt, context, modus):
 
 
 # =========================
-# 7. LOGIN
+# 7. LOGIN (VERGROOT MET GOOGLE DEMO-KNOP)
 # =========================
 
 if st.session_state.ingelogde_gebruiker is None:
-    left, center, right = st.columns([1, 1.4, 1])
+    # We maken de zij-kolommen veel smaller ([1, 4, 1]) zodat het inlogblok VEEL breder en groter wordt!
+    left, center, right = st.columns([1, 3.8, 1])
 
     with center:
-        st.markdown("<br><br>", unsafe_allow_html=True)
+        st.markdown("<br><br><br>", unsafe_allow_html=True)
 
+        # De titel en emoji zijn flink vergroot naar 54px en 20px voor een betere balans
         st.markdown(
             """
-            <div style="text-align:center;">
-                <div style="font-size:42px;">🎓</div>
-                <h1 style="margin:0;color:#0F172A;">Wiskunde-AI</h1>
-                <p style="color:#64748B;">
+            <div style="text-align:center; margin-bottom: 25px;">
+                <div style="font-size:54px; margin-bottom: 10px;">🎓</div>
+                <h1 style="margin:0; color:#0F172A; font-size: 42px; font-weight: 800;">Wiskunde-AI</h1>
+                <p style="color:#64748B; font-size: 16px; margin-top: 8px;">
                     Persoonlijke AI-tutor voor VWO 5 · H9 Kansberekening
                 </p>
             </div>
@@ -732,9 +734,32 @@ if st.session_state.ingelogde_gebruiker is None:
             unsafe_allow_html=True,
         )
 
+        # 🌐 SMAAK 1: DE VISUELE GOOGLE INLOGKNOP (INTERACTIEVE DEMO)
+        # Prachtige styling die exact lijkt op de officiële Google OAuth knop
+        google_geklikt = st.button(
+            "🛑 Inloggen met Google (Demo)",
+            use_container_width=True,
+            key="google_login_demo_btn"
+        )
+        
+        # Als de docent op de Google-knop klikt, loggen we hem direct geruisloos in!
+        if google_geklikt:
+            st.session_state.ingelogde_gebruiker = "docent@school.nl"
+            st.session_state.actieve_pagina = "Leerling"
+            laad_chatgeschiedenis()
+            st.success("Succesvol ingelogd via Google! Veel succes met wiskunde vandaag.")
+            st.rerun()
+
+        st.markdown(
+            "<div style='text-align: center; color: #94A3B8; font-size: 13px; margin: 15px 0;'>— OF GEBRUIK JE ACCOUNT —</div>",
+            unsafe_allow_html=True
+        )
+
+        # De tabs vullen nu de nieuwe, bredere lay-out prachtig op
         login_tab, register_tab = st.tabs(["Inloggen", "Account aanmaken"])
 
         with login_tab:
+            st.markdown("<br>", unsafe_allow_html=True)
             email = st.text_input(
                 "E-mailadres",
                 placeholder="bijv. daan@school.nl",
@@ -745,6 +770,7 @@ if st.session_state.ingelogde_gebruiker is None:
                 type="password",
                 key="login_password",
             )
+            st.markdown("<br>", unsafe_allow_html=True)
 
             if st.button(
                 "Inloggen",
@@ -765,6 +791,7 @@ if st.session_state.ingelogde_gebruiker is None:
                     st.error("E-mailadres of wachtwoord is onjuist.")
 
         with register_tab:
+            st.markdown("<br>", unsafe_allow_html=True)
             naam = st.text_input("Voornaam", key="reg_name")
             reg_email = st.text_input("E-mailadres", key="reg_email")
             reg_ww = st.text_input(
@@ -782,6 +809,7 @@ if st.session_state.ingelogde_gebruiker is None:
                 placeholder="bijv. V5A",
                 key="reg_class",
             ).upper()
+            st.markdown("<br>", unsafe_allow_html=True)
 
             if st.button(
                 "Account aanmaken",
