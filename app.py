@@ -5,6 +5,7 @@ import re
 import json
 from datetime import datetime
 import pandas as pd
+import altair as alt
 
 
 # ============================================================
@@ -229,10 +230,10 @@ st.markdown(
     min-height: 64px;
     border-radius: 14px;
     font-weight: 700;
-    background: white;
+    background: #F8FAFC;
     color: #0F172A;
     border: 1px solid #E2E8F0;
-    box-shadow: none;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
 }
 .st-key-start_mode_direct button:hover,
 .st-key-start_mode_uitleg button:hover,
@@ -419,6 +420,17 @@ def huidige_user():
 def extract_opdracht_nummer(prompt):
     nummers = re.findall(r"\d+", prompt)
     return nummers[0] if nummers else None
+
+
+def render_ai_markdown(content):
+    """Render AI-LaTeX in een vorm die Streamlit Markdown correct weergeeft."""
+    if not content:
+        return
+
+    content = re.sub(r"\\\[(.*?)\\\]", r"$$\1$$", content, flags=re.DOTALL)
+    content = re.sub(r"\\\((.*?)\\\)", r"$\1$", content, flags=re.DOTALL)
+
+    st.markdown(content)
 
 
 def zoek_opdracht_blok(full_text, nummer):
@@ -679,7 +691,7 @@ def vraag_aan_ollama(prompt, context, modus):
         
         # We gebruiken het officiële, razendsnelle online Llama 3 model van Meta via Groq!
         response = client.chat.completions.create(
-            model="openai/gpt-oss-120b",
+            model="llama3-8b-8192",
             messages=[
                 {
                     "role": "system",
@@ -848,9 +860,8 @@ with st.sidebar:
         st.session_state.actieve_pagina = "Leerling"
         st.rerun()
 
-    st.markdown("#### Navigatie")
-
     if user_rol == "Docent":
+        st.markdown("#### Navigatie")
         if st.button(
             "Leerlingomgeving",
             use_container_width=True,
@@ -1024,7 +1035,7 @@ if st.session_state.actieve_pagina == "Leerling":
                 st.markdown(content)
         else:
             with st.chat_message("assistant", avatar="🤖"):
-                st.markdown(content)
+                render_ai_markdown(content)
                 st.caption("⚠️ AI kan fouten maken. Controleer belangrijke berekeningen altijd.")
 
     # ---------- Huidige begeleidingsmodus + chatbalk ----------
@@ -1102,7 +1113,7 @@ if st.session_state.actieve_pagina == "Leerling":
                     modus,
                 )
 
-            st.markdown(ai_output)
+            render_ai_markdown(ai_output)
             st.caption("⚠️ AI kan fouten maken. Controleer belangrijke berekeningen altijd.")
 
 
@@ -1115,7 +1126,6 @@ if st.session_state.actieve_pagina == "Leerling":
         st.session_state.fout_bekeken = False
 
         sla_huidige_chat_op()
-        st.rerun()
 
     # ---------- Extra docentmodus ----------
     if (
@@ -1146,7 +1156,7 @@ if st.session_state.actieve_pagina == "Leerling":
         with st.container(border=True):
             st.markdown("**Hint 1 — Methode**")
             if h1:
-                st.markdown(
+                render_ai_markdown(
                     re.sub(
                         r"(?i)###\s*Hint\s*1\s*[—-]?\s*",
                         "",
@@ -1163,7 +1173,7 @@ if st.session_state.actieve_pagina == "Leerling":
             with st.container(border=True):
                 st.markdown("**Hint 2 — Berekening**")
                 if h2:
-                    st.markdown(
+                    render_ai_markdown(
                         re.sub(
                             r"(?i)###\s*Hint\s*2\s*[—-]?\s*",
                             "",
@@ -1187,7 +1197,7 @@ if st.session_state.actieve_pagina == "Leerling":
             with st.container(border=True):
                 st.markdown("**Hint 3 — Volgende stap**")
                 if h3:
-                    st.markdown(
+                    render_ai_markdown(
                         re.sub(
                             r"(?i)###\s*Hint\s*3\s*[—-]?\s*",
                             "",
@@ -1290,7 +1300,7 @@ elif st.session_state.actieve_pagina == "Docent":
     )
     k3.metric(
         "Opgaven opgelost",
-        st.session_state.sommen_opgelost,
+        len(opdrachten),
     )
     k4.metric(
         "Chatberichten",
@@ -1316,9 +1326,24 @@ elif st.session_state.actieve_pagina == "Docent":
                     columns=["Opdracht"],
                 )
 
-                telling = df_opd["Opdracht"].value_counts()
+                telling = df_opd["Opdracht"].value_counts().rename("Aantal").reset_index()
+                telling.columns = ["Opdracht", "Aantal"]
 
-                st.bar_chart(telling)
+                chart = (
+                    alt.Chart(telling)
+                    .mark_bar()
+                    .encode(
+                        x=alt.X(
+                            "Opdracht:N",
+                            sort="-y",
+                            axis=alt.Axis(labelAngle=0, labelLimit=180),
+                        ),
+                        y=alt.Y("Aantal:Q", title="Aantal"),
+                        tooltip=["Opdracht:N", "Aantal:Q"],
+                    )
+                    .properties(height=300)
+                )
+                st.altair_chart(chart, use_container_width=True)
             else:
                 st.info(
                     "Zodra leerlingen opdrachten opzoeken, verschijnt hier een grafiek."
@@ -1332,12 +1357,29 @@ elif st.session_state.actieve_pagina == "Docent":
                     v.get("modus", "Onbekend")
                     for v in vragen
                 ]
-                df_modus = pd.Series(
-                    modi,
-                    name="Modus",
-                ).value_counts()
+                df_modus = (
+                    pd.Series(modi, name="Modus")
+                    .value_counts()
+                    .rename("Aantal")
+                    .reset_index()
+                )
+                df_modus.columns = ["Modus", "Aantal"]
 
-                st.bar_chart(df_modus)
+                chart = (
+                    alt.Chart(df_modus)
+                    .mark_bar()
+                    .encode(
+                        x=alt.X(
+                            "Modus:N",
+                            sort="-y",
+                            axis=alt.Axis(labelAngle=0, labelLimit=180),
+                        ),
+                        y=alt.Y("Aantal:Q", title="Aantal"),
+                        tooltip=["Modus:N", "Aantal:Q"],
+                    )
+                    .properties(height=300)
+                )
+                st.altair_chart(chart, use_container_width=True)
             else:
                 st.info(
                     "Er zijn nog geen vraagmomenten geregistreerd."
