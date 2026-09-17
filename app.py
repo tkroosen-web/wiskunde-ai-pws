@@ -689,9 +689,9 @@ def vraag_aan_ollama(prompt, context, modus):
     try:
         client = groq.Groq(api_key=api_sleutel)
         
-        # We gebruiken het officiële, razendsnelle online Llama 3 model van Meta via Groq!
+        # We gebruiken een actueel production-model van Groq: OpenAI GPT-OSS 20B.
         response = client.chat.completions.create(
-            model="llama3-8b-8192",
+            model="openai/gpt-oss-20b",
             messages=[
                 {
                     "role": "system",
