@@ -71,6 +71,38 @@ st.markdown(
     padding-top: 1.8rem;
 }
 
+/* ---------- Chatbalk ---------- */
+[data-testid="stChatInput"] > div {
+    border-radius: 30px !important;
+    overflow: hidden !important;
+}
+
+[data-testid="stChatInput"] div[data-baseweb="textarea"] {
+    border-radius: 30px !important;
+}
+
+[data-testid="stChatInput"] textarea {
+    border-radius: 30px !important;
+}
+
+/* ---------- Vast profiel onderaan sidebar ---------- */
+.sidebar-profile {
+    position: fixed;
+    left: 16px;
+    bottom: 66px;
+    width: 230px;
+    z-index: 1000;
+    background: #F1F3F7;
+}
+
+.st-key-logout {
+    position: fixed !important;
+    left: 16px !important;
+    bottom: 16px !important;
+    width: 230px !important;
+    z-index: 1001;
+}
+
 /* ---------- Header ---------- */
 .ai-brand {
     display: flex;
@@ -322,6 +354,7 @@ def init_state():
         "analytics_events": [],
         "chat_loaded_for_user": None,
         "show_sources": True,
+        "pending_prompt": None,
     }
 
     for key, value in defaults.items():
@@ -710,23 +743,21 @@ def vraag_aan_ollama(prompt, context, modus):
 
 
 # =========================
-# 7. LOGIN (VERGROOT MET GOOGLE DEMO-KNOP)
+# 7. LOGIN
 # =========================
 
 if st.session_state.ingelogde_gebruiker is None:
-    # We maken de zij-kolommen veel smaller ([1, 4, 1]) zodat het inlogblok VEEL breder en groter wordt!
-    left, center, right = st.columns([1, 3.8, 1])
+    left, center, right = st.columns([1, 1.4, 1])
 
     with center:
-        st.markdown("<br><br><br>", unsafe_allow_html=True)
+        st.markdown("<br><br>", unsafe_allow_html=True)
 
-        # De titel en emoji zijn flink vergroot naar 54px en 20px voor een betere balans
         st.markdown(
             """
-            <div style="text-align:center; margin-bottom: 25px;">
-                <div style="font-size:54px; margin-bottom: 10px;">🎓</div>
-                <h1 style="margin:0; color:#0F172A; font-size: 42px; font-weight: 800;">Wiskunde-AI</h1>
-                <p style="color:#64748B; font-size: 16px; margin-top: 8px;">
+            <div style="text-align:center;">
+                <div style="font-size:42px;">🎓</div>
+                <h1 style="margin:0;color:#0F172A;">Wiskunde-AI</h1>
+                <p style="color:#64748B;">
                     Persoonlijke AI-tutor voor VWO 5 · H9 Kansberekening
                 </p>
             </div>
@@ -734,11 +765,9 @@ if st.session_state.ingelogde_gebruiker is None:
             unsafe_allow_html=True,
         )
 
-        # De tabs vullen nu de nieuwe, bredere lay-out prachtig op
         login_tab, register_tab = st.tabs(["Inloggen", "Account aanmaken"])
 
         with login_tab:
-            st.markdown("<br>", unsafe_allow_html=True)
             email = st.text_input(
                 "E-mailadres",
                 placeholder="bijv. daan@school.nl",
@@ -749,7 +778,6 @@ if st.session_state.ingelogde_gebruiker is None:
                 type="password",
                 key="login_password",
             )
-            st.markdown("<br>", unsafe_allow_html=True)
 
             if st.button(
                 "Inloggen",
@@ -770,7 +798,6 @@ if st.session_state.ingelogde_gebruiker is None:
                     st.error("E-mailadres of wachtwoord is onjuist.")
 
         with register_tab:
-            st.markdown("<br>", unsafe_allow_html=True)
             naam = st.text_input("Voornaam", key="reg_name")
             reg_email = st.text_input("E-mailadres", key="reg_email")
             reg_ww = st.text_input(
@@ -788,7 +815,6 @@ if st.session_state.ingelogde_gebruiker is None:
                 placeholder="bijv. V5A",
                 key="reg_class",
             ).upper()
-            st.markdown("<br>", unsafe_allow_html=True)
 
             if st.button(
                 "Account aanmaken",
@@ -869,6 +895,7 @@ with st.sidebar:
 
     if user_rol == "Docent":
         st.markdown("#### Navigatie")
+
         if st.button(
             "Leerlingomgeving",
             use_container_width=True,
@@ -893,21 +920,52 @@ with st.sidebar:
             st.session_state.actieve_pagina = "Klassenbeheer"
             st.rerun()
 
+        # Docenten hebben nu dezelfde toegang tot eerdere gesprekken
+        # en de keuze voor de grafische rekenmachine als leerlingen.
+        st.markdown("#### Chatgeschiedenis")
+
+        if not st.session_state.chat_geschiedenis:
+            st.caption("Nog geen opgeslagen gesprekken.")
+        else:
+            items = list(st.session_state.chat_geschiedenis.items())[-8:]
+            for naam, berichten in reversed(items):
+                if st.button(
+                    naam,
+                    use_container_width=True,
+                    key=f"history_docent_{naam}",
+                ):
+                    st.session_state.messages = list(berichten)
+                    match = re.search(r"\d+", naam)
+                    st.session_state.huidige_opdracht_nummer = (
+                        match.group(0) if match else "Onbekend"
+                    )
+                    st.session_state.hint_level = 1
+                    st.session_state.actieve_pagina = "Leerling"
+                    st.rerun()
+
+        st.divider()
+
+        with st.expander("Instellingen"):
+            st.session_state.gr_type = st.selectbox(
+                "Grafische rekenmachine",
+                [
+                    "Texas Instruments (TI-84)",
+                    "Casio (Fx-CG50)",
+                    "NumWorks",
+                ],
+                key="gr_selector",
+            )
+
     else:
         st.session_state.actieve_pagina = "Leerling"
 
-    # De begeleidingsmodus wordt nu uitsluitend in het startscherm gekozen.
-
+        # De begeleidingsmodus wordt uitsluitend in het startscherm gekozen.
         st.markdown("#### Recente opdrachten")
 
         if not st.session_state.chat_geschiedenis:
             st.caption("Nog geen opgeslagen gesprekken.")
         else:
-            # Laat maximaal 8 recente gesprekken zien.
-            items = list(
-                st.session_state.chat_geschiedenis.items()
-            )[-8:]
-
+            items = list(st.session_state.chat_geschiedenis.items())[-8:]
             for naam, berichten in reversed(items):
                 if st.button(
                     naam,
@@ -936,25 +994,26 @@ with st.sidebar:
                 key="gr_selector",
             )
 
-    # Profiel onderaan.
-    st.divider()
+    # Profiel staat vast onderaan de sidebar.
     letter = user_naam[0].upper() if user_naam else "?"
 
     st.markdown(
         f"""
-        <div style="display:flex;align-items:center;gap:10px;">
-            <div style="
-                width:38px;height:38px;border-radius:50%;
-                background:#2563EB;color:white;
-                display:flex;align-items:center;justify-content:center;
-                font-weight:700;">
-                {letter}
-            </div>
-            <div>
-                <b style="color:#0F172A;">{user_naam}<br>
-                <span style="font-size:12px;color:#64748B;">
-                    {user_rol} · {user_klas}
-                </span>
+        <div class="sidebar-profile">
+            <div style="display:flex;align-items:center;gap:10px;">
+                <div style="
+                    width:38px;height:38px;border-radius:50%;
+                    background:#2563EB;color:white;
+                    display:flex;align-items:center;justify-content:center;
+                    font-weight:700;flex-shrink:0;">
+                    {letter}
+                </div>
+                <div style="padding-top:5px;">
+                    <b style="color:#0F172A;">{user_naam}</b><br>
+                    <span style="font-size:12px;color:#64748B;">
+                        {user_rol} · {user_klas}
+                    </span>
+                </div>
             </div>
         </div>
         """,
@@ -1064,10 +1123,23 @@ if st.session_state.actieve_pagina == "Leerling":
 
     prompt = st.chat_input("Stel je vraag over H9 Kansberekening…")
 
+    # Eerst slaan we het bericht op en starten we een nieuwe rerun.
+    # Daardoor blijft ieder gebruikersbericht betrouwbaar zichtbaar in de chat,
+    # ook vanaf het tweede bericht.
     if prompt:
         st.session_state.messages.append(
             {"role": "user", "content": prompt}
         )
+        st.session_state.pending_prompt = prompt
+        st.rerun()
+
+    # Verwerk een nieuw bericht pas nadat de chatgeschiedenis opnieuw is
+    # opgebouwd. Zo staat het gebruikersbericht al zichtbaar in de chat.
+    pending_prompt = st.session_state.get("pending_prompt")
+
+    if pending_prompt:
+        st.session_state.pending_prompt = None
+        prompt = pending_prompt
 
         context = haal_opdracht_context(prompt)
         nummer = context["nummer"]
@@ -1122,7 +1194,6 @@ if st.session_state.actieve_pagina == "Leerling":
 
             render_ai_markdown(ai_output)
             st.caption("⚠️ AI kan fouten maken. Controleer belangrijke berekeningen altijd.")
-
 
         st.session_state.messages.append(
             {"role": "assistant", "content": ai_output}
