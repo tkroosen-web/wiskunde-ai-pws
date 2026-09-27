@@ -1061,7 +1061,7 @@ if st.session_state.actieve_pagina == "Leerling":
                 <div class="welcome-title">Hoi {user_naam}! 👋</div>
                 <div class="welcome-text">
                     Ik help je met <b>hoofdstuk 9 Kansberekening</b>.
-                    Kies hieronder hoe je wilt dat ik je help.
+                    Kies hieronder hoe je wilt dat ik je help. Vergeet niet om altijd je opdracht nummer in de vraag te benoemen. 
                 </div>
             </div>
             """,
