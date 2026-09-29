@@ -6,7 +6,6 @@ import json
 from datetime import datetime
 import pandas as pd
 import altair as alt
-import uuid
 
 
 # ============================================================
@@ -36,12 +35,6 @@ st.set_page_config(
 
 MODEL = "llama3.1"
 CHAPTER = "VWO 5 · H9 Kansberekening"
-
-# Tijdens de onderzoekles gebruiken we een vereenvoudigde toegang.
-# Zet ONDERZOEKSMODUS na de onderzoekles weer op False om de normale
-# login met e-mail/wachtwoord terug te zetten.
-ONDERZOEKSMODUS = True
-ONDERZOEKSKLASCODE = "BRAJV5"
 
 MODI = {
     "Direct antwoord": "direct",
@@ -754,228 +747,100 @@ def vraag_aan_ollama(prompt, context, modus):
 # =========================
 
 if st.session_state.ingelogde_gebruiker is None:
+    left, center, right = st.columns([1, 1.4, 1])
 
-    # ---------------------------------------------------------
-    # ONDERZOEKSMODUS
-    # Alleen naam + klassencode, zodat de klas snel kan starten.
-    # ---------------------------------------------------------
-    if ONDERZOEKSMODUS:
-        left, center, right = st.columns([1, 1.4, 1])
+    with center:
+        st.markdown("<br><br>", unsafe_allow_html=True)
 
-        with center:
-            st.markdown("<br><br>", unsafe_allow_html=True)
+        st.markdown(
+            """
+            <div style="text-align:center;">
+                <div style="font-size:42px;">🎓</div>
+                <h1 style="margin:0;color:#0F172A;">Wiskunde-AI</h1>
+                <p style="color:#64748B;">
+                    Persoonlijke AI-tutor voor VWO 5 · H9 Kansberekening
+                </p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 
-            st.markdown(
-                """
-                <div style="text-align:center;">
-                    <div style="
-                        width:52px;
-                        height:52px;
-                        border-radius:14px;
-                        background:#2563EB;
-                        color:white;
-                        display:flex;
-                        align-items:center;
-                        justify-content:center;
-                        margin:0 auto 12px auto;
-                        font-size:26px;
-                        font-weight:700;">
-                        ∑
-                    </div>
-                    <h1 style="margin:0;color:#0F172A;">Wiskunde-AI</h1>
-                    <p style="color:#64748B;">
-                        Onderzoeksomgeving · VWO 5
-                    </p>
-                </div>
-                """,
-                unsafe_allow_html=True,
+        login_tab, register_tab = st.tabs(["Inloggen", "Account aanmaken"])
+
+        with login_tab:
+            email = st.text_input(
+                "E-mailadres",
+                placeholder="bijv. daan@school.nl",
+                key="login_email",
             )
-
-            st.markdown("<br>", unsafe_allow_html=True)
-
-            st.markdown(
-                """
-                <div class="welcome-card">
-                    <div class="welcome-title">Start het onderzoek</div>
-                    <div class="welcome-text">
-                        Vul hieronder je naam en de klassencode in.
-                        Daarna kom je direct in de leerlingomgeving.
-                    </div>
-                </div>
-                """,
-                unsafe_allow_html=True,
+            wachtwoord = st.text_input(
+                "Wachtwoord",
+                type="password",
+                key="login_password",
             )
-
-            onderzoek_naam = st.text_input(
-                "Naam",
-                placeholder="bijv. Daan",
-                key="onderzoek_naam_input",
-            )
-
-            onderzoek_code = st.text_input(
-                "Klassencode",
-                placeholder="bijv. BRAJV5",
-                key="onderzoek_code_input",
-            )
-
-            st.markdown("<br>", unsafe_allow_html=True)
 
             if st.button(
-                "Start onderzoek",
+                "Inloggen",
                 type="primary",
                 use_container_width=True,
-                key="start_onderzoek",
+                key="login_btn",
             ):
-                naam = onderzoek_naam.strip()
-                code = onderzoek_code.strip().upper()
-
-                if not naam:
-                    st.error("Vul eerst je naam in.")
-                elif code != ONDERZOEKSKLASCODE:
-                    st.error(
-                        f"De klassencode klopt niet. "
-                        f"Gebruik de code **{ONDERZOEKSKLASCODE}**."
-                    )
+                if (
+                    email in st.session_state.gebruikers_db
+                    and st.session_state.gebruikers_db[email]["wachtwoord"]
+                    == wachtwoord
+                ):
+                    st.session_state.ingelogde_gebruiker = email
+                    st.session_state.actieve_pagina = "Leerling"
+                    laad_chatgeschiedenis()
+                    st.rerun()
                 else:
-                    # Tijdelijke leerling voor deze sessie.
-                    # Er hoeft tijdens het onderzoek geen account te worden aangemaakt.
-                    onderzoek_id = f"onderzoek_{uuid.uuid4().hex[:12]}"
+                    st.error("E-mailadres of wachtwoord is onjuist.")
 
-                    st.session_state.gebruikers_db[onderzoek_id] = {
+        with register_tab:
+            naam = st.text_input("Voornaam", key="reg_name")
+            reg_email = st.text_input("E-mailadres", key="reg_email")
+            reg_ww = st.text_input(
+                "Wachtwoord",
+                type="password",
+                key="reg_password",
+            )
+            rol = st.selectbox(
+                "Ik ben een",
+                ["Leerling", "Docent"],
+                key="reg_role",
+            )
+            klas = st.text_input(
+                "Klas",
+                placeholder="bijv. V5A",
+                key="reg_class",
+            ).upper()
+
+            if st.button(
+                "Account aanmaken",
+                use_container_width=True,
+                key="register_btn",
+            ):
+                if not all([naam, reg_email, reg_ww, klas]):
+                    st.warning("Vul alle velden in.")
+                elif reg_email in st.session_state.gebruikers_db:
+                    st.error("Dit e-mailadres bestaat al.")
+                else:
+                    st.session_state.gebruikers_db[reg_email] = {
                         "naam": naam,
-                        "wachtwoord": "",
-                        "rol": "Leerling",
-                        "klas": ONDERZOEKSKLASCODE,
+                        "wachtwoord": reg_ww,
+                        "rol": rol,
+                        "klas": klas,
                     }
 
-                    st.session_state.ingelogde_gebruiker = onderzoek_id
-                    st.session_state.actieve_pagina = "Leerling"
-                    st.session_state.user_klas = ONDERZOEKSKLASCODE
-                    st.session_state.gekozen_modus_code = "docent"
-
-                    # Voor een nieuwe deelnemer beginnen we met een lege chat.
-                    st.session_state.messages = []
-                    st.session_state.chat_geschiedenis = {}
-                    st.session_state.gezochte_sommen = []
-                    st.session_state.sommen_opgelost = 0
-                    st.session_state.huidige_opdracht_nummer = "Onbekend"
-                    st.session_state.huidige_methode = ""
-                    st.session_state.huidige_ai_output = ""
-                    st.session_state.hint_level = 1
-                    st.session_state.fout_bekeken = False
-                    st.session_state.huidige_som_afgerond = False
-                    st.session_state.feedback = []
-                    st.session_state.analytics_events = []
-                    st.session_state.chat_loaded_for_user = None
-                    st.session_state.show_sources = True
-                    st.session_state.pending_prompt = None
-
-                    st.rerun()
-
-    # ---------------------------------------------------------
-    # NORMALE LOGIN
-    # Alleen actief wanneer ONDERZOEKSMODUS = False.
-    # ---------------------------------------------------------
-    else:
-        left, center, right = st.columns([1, 1.4, 1])
-
-        with center:
-            st.markdown("<br><br>", unsafe_allow_html=True)
-
-            st.markdown(
-                """
-                <div style="text-align:center;">
-                    <div style="font-size:42px;">🎓</div>
-                    <h1 style="margin:0;color:#0F172A;">Wiskunde-AI</h1>
-                    <p style="color:#64748B;">
-                        Persoonlijke AI-tutor voor VWO 5 · H9 Kansberekening
-                    </p>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
-
-            login_tab, register_tab = st.tabs(
-                ["Inloggen", "Account aanmaken"]
-            )
-
-            with login_tab:
-                email = st.text_input(
-                    "E-mailadres",
-                    placeholder="bijv. daan@school.nl",
-                    key="login_email",
-                )
-                wachtwoord = st.text_input(
-                    "Wachtwoord",
-                    type="password",
-                    key="login_password",
-                )
-
-                if st.button(
-                    "Inloggen",
-                    type="primary",
-                    use_container_width=True,
-                    key="login_btn",
-                ):
-                    if (
-                        email in st.session_state.gebruikers_db
-                        and st.session_state.gebruikers_db[email]["wachtwoord"]
-                        == wachtwoord
-                    ):
-                        st.session_state.ingelogde_gebruiker = email
-                        st.session_state.actieve_pagina = "Leerling"
-                        laad_chatgeschiedenis()
-                        st.rerun()
-                    else:
-                        st.error("E-mailadres of wachtwoord is onjuist.")
-
-            with register_tab:
-                naam = st.text_input("Voornaam", key="reg_name")
-                reg_email = st.text_input(
-                    "E-mailadres",
-                    key="reg_email",
-                )
-                reg_ww = st.text_input(
-                    "Wachtwoord",
-                    type="password",
-                    key="reg_password",
-                )
-                rol = st.selectbox(
-                    "Ik ben een",
-                    ["Leerling", "Docent"],
-                    key="reg_role",
-                )
-                klas = st.text_input(
-                    "Klas",
-                    placeholder="bijv. V5A",
-                    key="reg_class",
-                ).upper()
-
-                if st.button(
-                    "Account aanmaken",
-                    use_container_width=True,
-                    key="register_btn",
-                ):
-                    if not all([naam, reg_email, reg_ww, klas]):
-                        st.warning("Vul alle velden in.")
-                    elif reg_email in st.session_state.gebruikers_db:
-                        st.error("Dit e-mailadres bestaat al.")
-                    else:
-                        st.session_state.gebruikers_db[reg_email] = {
-                            "naam": naam,
-                            "wachtwoord": reg_ww,
-                            "rol": rol,
-                            "klas": klas,
+                    if klas not in st.session_state.klassen_instellingen:
+                        st.session_state.klassen_instellingen[klas] = {
+                            "geblokkeerde_modus": None
                         }
 
-                        if klas not in st.session_state.klassen_instellingen:
-                            st.session_state.klassen_instellingen[klas] = {
-                                "geblokkeerde_modus": None
-                            }
-
-                        st.success(
-                            "Account aangemaakt. Je kunt nu inloggen."
-                        )
+                    st.success(
+                        "Account aangemaakt. Je kunt nu inloggen."
+                    )
 
     st.stop()
 
@@ -994,10 +859,7 @@ user_klas = user_info.get("klas", "V5A")
 
 st.session_state.user_klas = user_klas
 
-if (
-    not ONDERZOEKSMODUS
-    and st.session_state.chat_loaded_for_user != st.session_state.ingelogde_gebruiker
-):
+if st.session_state.chat_loaded_for_user != st.session_state.ingelogde_gebruiker:
     laad_chatgeschiedenis()
 
 
